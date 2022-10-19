@@ -1,0 +1,83 @@
+- ABA UTILIZADA PARA A DESCRIÇÃO PASSO A PASSO DO PROJETO.
+
+-> SPRING INITIALIZR:
+    Dependencies:
+        - Spring Boot DevTools
+        - Spring Web
+        - Lombok
+        - Spring Data JPA
+        - PostgreSQL DRIVER
+        - Validation
+        - FlyWay Migration
+        - SpringFox-Boot Starter-Swagger-UI 
+        - SpringFox-Boot Starter
+
++ Passo 1: criação
+1- Criação tabela de Entidade e Relacionamento com LUCID, para facilitar a visualização
+2- Criação DataBase que será utilizada no programa (PostgreSQL) = "projetofinalAPI"
+
++ Passo 2: application.properties
+1- Conectar API ao Banco 
+[
+    spring.datasource.url=jdbc:postgresql://localhost:5432/projetofinalAPI
+    spring.datasource.username=postgres
+    spring.datasource.password="SUA SENHA"
+
+    spring.jpa.show-sql=true
+    spring.jpa.hibernate.ddl-auto=none
+    spring.jpa.properties.hibernate.format_sql=true
+
+    spring.jackson.deserialization.fail-on-unknown-properties=true
+
+    spring.mvc.pathmatch.matching-strategy=ant-path-matcher
+]
+2- Dependencies JPA 
+3- Dependencies Swagger "spring.mvc.pathmatch.matching-strategy=ant_path_matcher"
+
++ Passo 3: swagger
+1- Adicionar dependencies ao pom.xml //www.mvnrepository.com
+2- Criar classe SwaggerConfig no pacote config
+3- Consulta Swagger: http://localhost:8080/swagger-ui/index.html
+
++ Passo 4: model
+1- Criar Pacote Model
+2- Classe Livro
+3- Classe Categoria
+4- Classe Associado
+5- Classe Autor
+6- Classe LivroAutor
+7- Classe Emprestimo
+8- Classe EmprestimoLivro
+
++ Passo 5: db/Migration
+1- Criar Tabela Categoria
+2- Criar Tabela Livro FK Categoria
+3- Criar Tabela Associado
+4- Criar Tabela Autor/ Livro-Autor Conexão
+5- Criar Tabela Emprestimo/ Emprestimo-Livro Conexão
+
++ Passo	6: repository
+1- Livro repository
+2- Autor repository
+3- Categoria repository
+4- Emprestimo repository
+5- Associado repository
+
++ Passo 7: exception
+1- Criar ControllerExceptionHandler 
+2- Criar ErroResposta
+
++ Passo 8: service
+1- Livro service
+2- Autor service
+3- Categoria service
+4- Emprestimo service
+5- Associado service
+6- Criar funções para os CRUDS(Get,GetALL,Put,Post,Delete)
+
++ Passo 9: controller
+1- Controller Livro
+2- Controller Categoria
+3- Controller Associado
+4- Controller Autor
+5- Controller Emprestimo
