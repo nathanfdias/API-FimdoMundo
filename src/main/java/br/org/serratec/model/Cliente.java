@@ -47,9 +47,7 @@ public class Cliente {
     @NotBlank(message="Telefone Obrigatório")
     @Column(name="telefone", nullable = false, length=40)
     private String telefone;
-	
-    @Past
-	@Temporal(TemporalType.DATE)
+
 	@Column(name = "data_nascimento")
 	private LocalDate dataNascimento;
 

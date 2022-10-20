@@ -1,5 +1,7 @@
 package br.org.serratec.model;
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
@@ -16,7 +18,7 @@ import lombok.Data;
 @Entity
 @Table(name="item_pedido")
 @Data
-public class ItemPedido {
+public class ItemPedido implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
