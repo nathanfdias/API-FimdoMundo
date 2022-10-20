@@ -41,13 +41,13 @@
 
 + Passo 4: model
 1- Criar Pacote Model
-2- Classe Livro
-3- Classe Categoria
-4- Classe Associado
-5- Classe Autor
-6- Classe LivroAutor
-7- Classe Emprestimo
-8- Classe EmprestimoLivro
+2- Classe Categoria
+3- Classe Cliente
+4- Classe Endereco
+5- Classe ItemPedido
+6- Classe Pedido
+7- Classe Produto
+8- Classe ItemPedidoPk
 
 + Passo 5: db/Migration
 1- Criar Tabela Categoria
