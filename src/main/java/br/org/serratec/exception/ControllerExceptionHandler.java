@@ -16,7 +16,7 @@ import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExcep
 
 @ControllerAdvice
 public class ControllerExceptionHandler extends ResponseEntityExceptionHandler{
-    @Override
+	@Override
     protected ResponseEntity<Object> handleMethodArgumentNotValid(MethodArgumentNotValidException ex,
             HttpHeaders headers, HttpStatus status, WebRequest request) {
         List<String> erros = new ArrayList<>();
@@ -32,10 +32,11 @@ public class ControllerExceptionHandler extends ResponseEntityExceptionHandler{
     @Override
     protected ResponseEntity<Object> handleHttpMessageNotReadable(HttpMessageNotReadableException ex,
             HttpHeaders headers, HttpStatus status, WebRequest request) {
-                
+
         ErroResposta erroResposta = new ErroResposta(status.value(),
                 "Existem campos inválidos. Confira o preenchimento", LocalDateTime.now(), null);
 
         return super.handleExceptionInternal(ex, erroResposta, headers, status, request);
     }
 }
+    
