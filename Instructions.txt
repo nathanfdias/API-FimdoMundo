@@ -11,10 +11,11 @@
         - FlyWay Migration
         - SpringFox-Boot Starter-Swagger-UI 
         - SpringFox-Boot Starter
+        - Mail Sender
 
 + Passo 1: criação
 1- Criação tabela de Entidade e Relacionamento com LUCID, para facilitar a visualização
-2- Criação DataBase que será utilizada no programa (PostgreSQL) = "projetofinalAPI"
+2- Criação DataBase que será utilizada no programa (PostgreSQL) = "projetofinalapi"
 
 + Passo 2: application.properties
 1- Conectar API ao Banco 
@@ -33,6 +34,7 @@
 ]
 2- Dependencies JPA 
 3- Dependencies Swagger "spring.mvc.pathmatch.matching-strategy=ant_path_matcher"
+4- Configuracao do Email
 
 + Passo 3: swagger
 1- Adicionar dependencies ao pom.xml //www.mvnrepository.com
@@ -47,37 +49,44 @@
 5- Classe ItemPedido
 6- Classe Pedido
 7- Classe Produto
-8- Classe ItemPedidoPk
+8- Classe ItemPedidoPk (Talvez não utilizemos)
 
 + Passo 5: db/Migration
-1- Criar Tabela Categoria
-2- Criar Tabela Livro FK Categoria
-3- Criar Tabela Associado
-4- Criar Tabela Autor/ Livro-Autor Conexão
-5- Criar Tabela Emprestimo/ Emprestimo-Livro Conexão
+1- Criar Tabelas
+2- Criar Inserts
+
 
 + Passo	6: repository
-1- Livro repository
-2- Autor repository
-3- Categoria repository
-4- Emprestimo repository
-5- Associado repository
+1- Categoria repository
+2- Cliente repository
+3- Endereco repository
+4- Produto repository
 
 + Passo 7: exception
 1- Criar ControllerExceptionHandler 
 2- Criar ErroResposta
+3- Criar MailException
+4- Criar CpfException
+5- Criar EnumValidationException
 
-+ Passo 8: service
-1- Livro service
-2- Autor service
++ Passo 8: dto
+1-
+2-
+3-
+4-
+
++ Passo 9: Config
+1- Criar Config
+2- MailConfig
+3- SwaggerConfig
+
++ Passo 10: service
+1- Cliente service
+2- Endereco service
 3- Categoria service
-4- Emprestimo service
-5- Associado service
+4-  service
+5-  service
 6- Criar funções para os CRUDS(Get,GetALL,Put,Post,Delete)
 
-+ Passo 9: controller
-1- Controller Livro
-2- Controller Categoria
-3- Controller Associado
-4- Controller Autor
-5- Controller Emprestimo
++ Passo 11: controller
+1- Controller Cliente

@@ -1,39 +1,32 @@
 package br.org.serratec.dto;
 
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.Size;
+import br.org.serratec.model.Endereco;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
-import lombok.Data;
-
-@Data
+@Getter
+@Setter
+@NoArgsConstructor
 public class EnderecoDTO {
 
-    private Long idEndereco;
-
-    @NotBlank
+    private Long id;
     private String cep;
-    
-    @NotBlank
-	@Size(min=4, max=60)
-    private String rua;
-    
-    @NotBlank
-    @Size(max=50)
-    private String bairro;
-    
-    @NotBlank
-    @Size(max=80)
-    private String cidade;
-    
-    @NotBlank
-    @Size(max=20)
-    private String numero;
-    
-    @Size(max=80)
+    private String logradouro;
     private String complemento;
-    
-    @NotBlank
-    @Size(min=2, max=2)
-    private String uf;
-  
+    private String bairro;
+    private String cidade;
+    private String estado;
+    private Integer numero;
+
+    public EnderecoDTO(Endereco endereco) {
+        this.id = endereco.getId();
+        this.cep = endereco.getCep();
+        this.logradouro = endereco.getLogradouro();
+        this.complemento = endereco.getComplemento();
+        this.bairro = endereco.getBairro();
+        this.cidade = endereco.getLocalidade();
+        this.estado = endereco.getUf();
+        this.numero = endereco.getNumero();
+    }
 }

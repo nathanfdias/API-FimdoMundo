@@ -1,23 +1,36 @@
 package br.org.serratec.model;
 
 import javax.persistence.Column;
-import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 
-import br.org.serratec.relacaoPedido.ItemPedidoPk;
-import lombok.Data;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 
+import lombok.Getter;
+import lombok.Setter;
+
+@Setter
+@Getter
 @Entity
 @Table(name="item_pedido")
-@Data
+
 public class ItemPedido {
     
-    @EmbeddedId
-    private ItemPedidoPk id = new ItemPedidoPk();
+    // @EmbeddedId
+    // private ItemPedidoPk id = new ItemPedidoPk();
+
+	@Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_item_pedido")
+    private Long id;
     
     @NotNull
     @Min(1)
@@ -40,6 +53,15 @@ public class ItemPedido {
     @NotNull
 	@Column(name="valor_liquido")
 	private Double valorLiquido;
+
+	@JsonBackReference
+    @ManyToOne
+    @JoinColumn(name = "id_produto")
+    private Produto produto;
+
+	@ManyToOne
+    @JoinColumn(name = "id_pedido")
+    private Pedido pedido;
     
     @Transient
 	public Double getSubTotal() {

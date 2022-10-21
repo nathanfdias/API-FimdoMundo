@@ -3,6 +3,10 @@ package br.org.serratec.config;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+import br.org.serratec.dto.EnderecoDTO;
+import br.org.serratec.model.Cliente;
+import br.org.serratec.model.Endereco;
+import br.org.serratec.model.Produto;
 import springfox.documentation.builders.PathSelectors;
 import springfox.documentation.builders.RequestHandlerSelectors;
 import springfox.documentation.spi.DocumentationType;
@@ -16,6 +20,7 @@ public class SwaggerConfig {
         .select()
         .apis(RequestHandlerSelectors.any())
         .paths(PathSelectors.any())
-        .build();
+        .build()
+        .ignoredParameterTypes(Produto.class, Cliente.class, Endereco.class, EnderecoDTO.class);
     }
 }

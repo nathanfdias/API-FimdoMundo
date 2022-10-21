@@ -1,5 +1,7 @@
 package br.org.serratec.enums;
 
+import br.org.serratec.exception.EnumValidationException;
+
 public enum PedidoStatus {
 	
 	AGUARDANDO_PAGAMENTO(1),
@@ -18,12 +20,12 @@ public enum PedidoStatus {
 		return code;
 	}
 	
-	public static PedidoStatus valueOf(int code) {
+	public static PedidoStatus valueOf(int code) throws EnumValidationException {
 		for (PedidoStatus value : PedidoStatus.values()) {
 			if (value.getCode() == code) {
 				return value;
 			}
 		}
-		throw new IllegalArgumentException("Código Inválido para Status de Pedido");
+		throw new EnumValidationException("Status Inválido");
 	}
 }

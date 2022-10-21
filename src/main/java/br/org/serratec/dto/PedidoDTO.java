@@ -15,7 +15,7 @@ import lombok.Data;
 @Data
 public class PedidoDTO {
     
-    private Long idPedido;
+    private Long id;
 
     @Past
 	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss'Z'", timezone = "GMT")

@@ -15,17 +15,21 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Past;
 
-import lombok.Data;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
 @Entity
 @Table(name="produto")
-@Data
 public class Produto {
 
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="id_produto")
-	private Long idProduto;
+	private Long id;
 	
 	@NotBlank(message = "Nome inválido")
 	@Column(name="nome", nullable=false , length=30)
@@ -36,7 +40,7 @@ public class Produto {
 	
 	@NotNull
 	@Column(name="qtd_estoque", nullable=false)
-	private Integer qtdEstoque;
+	private Integer quantidadeEstoque;
 	
 	@Past
 	@Column(name="data_cadastro")
@@ -50,6 +54,7 @@ public class Produto {
     @Column(name="imagem", nullable = false)
     private byte[] imagem;
 
+	@JsonBackReference
     @ManyToOne
     @JoinColumn(name="id_categoria")
     private Categoria categoria;

@@ -3,29 +3,30 @@ package br.org.serratec.dto;
 import java.time.LocalDate;
 
 import br.org.serratec.model.Cliente;
-import br.org.serratec.model.Endereco;
-import lombok.Data;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
-@Data
-public class ClienteDTO {
-
+@Setter
+@Getter
+@NoArgsConstructor
+public class ClienteListDTO {
+    
     private Long id;
-    private String nomeCompleto;
     private String email;
+    private String nomeCompleto;
     private String cpf;
     private String telefone;
     private LocalDate dataNascimento;
+    private EnderecoDTO endereco;
 
-    private Endereco endereco;
-
-    public ClienteDTO(Cliente cliente) {
+    public ClienteListDTO(Cliente cliente) {
         this.id = cliente.getId();
-        this.nomeCompleto = cliente.getNomeCompleto(); 
         this.email = cliente.getEmail();
+        this.nomeCompleto = cliente.getNomeCompleto();
         this.cpf = cliente.getCpf();
         this.telefone = cliente.getTelefone();
         this.dataNascimento = cliente.getDataNascimento();
-        this.endereco = cliente.getEndereco();
+        this.endereco =  new EnderecoDTO(cliente.getEndereco());
     }
-
 }
