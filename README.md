@@ -43,7 +43,15 @@ Apenas instalando os arquivos de projeto.
 
 ## ✒️ Autor
 
-[<img src="https://avatars.githubusercontent.com/u/104539556?v=4" width=115><br><sub>Nathan Dias</sub>](https://github.com/nathanfdias)
+[<sub>Nathan Dias</sub>](https://github.com/nathanfdias)
+</br>
+[<sub>Lucas Lemos</sub>](https://github.com/00Lemos)
+</br>
+[<sub>Sérgio Bragança</sub>](https://github.com/sergiobraganca)
+</br>
+[<sub>André Felipe</sub>](https://github.com/Andre-Toigo)
+</br>
+[<sub>José Lopes</sub>](https://github.com/zehlopes)
 
 ---
 
