@@ -17,6 +17,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.persistence.Transient;
 import javax.validation.constraints.NotNull;
 
 import br.org.serratec.enums.PedidoStatus;
@@ -30,7 +31,7 @@ public class Pedido {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="id_pedido")
-	private Long id;
+	private Long idPedido;
 
 	@Column(name = "data_pedido")
 	@Temporal(TemporalType.TIMESTAMP)
@@ -56,20 +57,20 @@ public class Pedido {
 	@JoinColumn(name = "id_cliente")
 	private Cliente cliente;
 
-    @OneToMany(mappedBy = "itemPedidoPk.pedido")
-    private Set<ItemPedido> items = new HashSet<>();
+    @OneToMany(mappedBy = "id.pedido")
+    private Set<ItemPedido> itens = new HashSet<>();
 
 	// @OneToMany(mappedBy = "id.pedido")
 	// private Set<PedidoItem> itens = new HashSet<>();
 
 
-	// @Transient
-	// public Double getTotal() {
-	// 	double soma = 0.0;
-	// 	for(PedidoItem item : itens) {
-	// 		soma += item.getSubTotal();
-	// 	}
-	// 	return soma;
-	// }
+	@Transient
+	public Double getTotal() {
+		double soma = 0.0;
+		for(ItemPedido item : itens) {
+			soma += item.getSubTotal();
+		}
+		return soma;
+	}
 
 }

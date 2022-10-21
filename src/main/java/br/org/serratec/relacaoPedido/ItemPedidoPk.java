@@ -1,5 +1,7 @@
 package br.org.serratec.relacaoPedido;
 
+import java.io.Serializable;
+
 import javax.persistence.Embeddable;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -8,7 +10,9 @@ import br.org.serratec.model.Pedido;
 import br.org.serratec.model.Produto;
 
 @Embeddable
-public class ItemPedidoPk {
+public class ItemPedidoPk implements Serializable {
+
+    private static final long serialVersionUID = 1L;
 
     @ManyToOne
 	@JoinColumn (name = "id_produto")
@@ -17,9 +21,6 @@ public class ItemPedidoPk {
 	@ManyToOne
 	@JoinColumn (name = "id_pedido")
 	private Pedido pedido;
-
-    public ItemPedidoPk(){
-    }
 
     public Produto getProduto() {
         return produto;
