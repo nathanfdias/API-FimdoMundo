@@ -1,6 +1,6 @@
 package br.org.serratec.model;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -44,7 +44,7 @@ public class Produto {
 	
 	@Past
 	@Column(name="data_cadastro")
-	private Date dataCadastro;
+	private LocalDate dataCadastro;
     
 	@NotNull
 	@Column(name="valor_unitario", nullable=false , length=10)

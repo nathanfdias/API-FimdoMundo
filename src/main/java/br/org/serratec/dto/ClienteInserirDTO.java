@@ -42,7 +42,7 @@ public class ClienteInserirDTO {
 
     @NotNull(message = "você deve digitar uma data correta")
     @Past
-    @Column(name = "data_nasc")
+    @Column(name = "data_nascimento")
     private LocalDate dataNascimento;
 
     @NotNull(message = "você deve completar os dados corretamente")

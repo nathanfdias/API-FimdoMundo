@@ -2,8 +2,10 @@ package br.org.serratec.model;
 
 import java.time.LocalDate;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -24,7 +26,8 @@ import lombok.Setter;
 @Entity
 @Table(name="cliente")
 public class Cliente {
-    @Id
+	
+	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id_cliente")
 	private Long id;
@@ -51,8 +54,13 @@ public class Cliente {
 	@Column(name = "data_nascimento")
 	private LocalDate dataNascimento;
 
-    @OneToOne
-	@JoinColumn(name="id_endereco")
-	private Endereco endereco;
+    @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL, orphanRemoval = true)
+    @JoinColumn(name = "id_endereco")
+    private Endereco endereco;
 
+    @Override
+	public String toString() {
+		return "Nome: " + nomeCompleto + "\nEmail: " + email + "\nCpf: " + cpf
+				+ "\nTelefone: " + telefone + "\nData nascimento: " + dataNascimento + "\nEndereco: " + endereco;
+	}
 }

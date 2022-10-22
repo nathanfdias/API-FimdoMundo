@@ -11,7 +11,7 @@ CREATE TABLE produto (
   qtd_estoque INT,
   data_cadastro DATE,
   valor_unitario REAL NOT NULL,
-  imagem BYTEA,
+  imagem oid,
   id_categoria int REFERENCES categoria(id_categoria)
 );
 

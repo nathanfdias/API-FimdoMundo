@@ -75,4 +75,15 @@ public class EnderecoService {
 
         return endereco;
     }
+
+    // DELETE nao necessario, CASCADETYPE.ALL
+//     public Boolean delete(Long id) {
+//         Optional<Endereco> endereco = enderecoRepository.findById(id);
+
+//         if (endereco.isPresent()) {
+//             enderecoRepository.deleteById(id);
+//             return true;
+//         }
+//         return false;
+//     }
 }

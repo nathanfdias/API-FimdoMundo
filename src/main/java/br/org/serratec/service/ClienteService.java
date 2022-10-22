@@ -11,6 +11,7 @@ import br.org.serratec.config.MailConfig;
 import br.org.serratec.dto.ClienteDTO;
 import br.org.serratec.dto.ClienteInserirDTO;
 import br.org.serratec.dto.ClienteListDTO;
+import br.org.serratec.dto.EnderecoDTO;
 import br.org.serratec.dto.EnderecoInserirDTO;
 import br.org.serratec.exception.CpfException;
 import br.org.serratec.exception.EmailException;
@@ -83,22 +84,50 @@ public class ClienteService {
 
     public ClienteDTO atualizar(Long id, ClienteInserirDTO clienteInserirDTO) {
 
+        clienteInserirDTO.setId(id);
+
+        // Buscando o cliente que vai ser atualizado
+        ClienteListDTO clientL = buscar(id);
+        // Buscando o endereço que vai ser atualizado do cliente
+        EnderecoDTO enderecoBuscarId = clientL.getEndereco();
+
+        // verifica no banco de pode ser alterado o email
+        if (clienteRepository.findByEmail(clienteInserirDTO.getEmail()) != null) {
+            if (!clienteRepository.findByEmail(clienteInserirDTO.getEmail()).getEmail().equals(clientL.getEmail())) {
+                throw new EmailException("Email já existe na base");
+            }
+        }
+
+        // não permite alteração do cpf do cliente
+        if (clienteRepository.findByCpf(clienteInserirDTO.getCpf()) != null) {
+            if (!clienteRepository.findByCpf(clienteInserirDTO.getCpf()).getCpf().equals(clientL.getCpf())) {
+                throw new CpfException("CPF não pode ser alterado");
+            }
+        }
+
+        if (clienteRepository.findByCpf(clienteInserirDTO.getCpf()) == null) {
+            throw new CpfException("CPF não pode ser alterado");
+        }
+
+        // Atualizando o endereço do cliente passando o id do endereço que foi achando
+        // acima e o dados novos
         EnderecoInserirDTO endereco = clienteInserirDTO.getEndereco();
         Endereco enderecoViaCep = enderecoService.atualizar(endereco.getCep(), endereco.getComplemento(),
-                endereco.getNumero(), id);
-
-        clienteInserirDTO.setId(id);
+                endereco.getNumero(), enderecoBuscarId.getId());
 
         Cliente novoCliente = new Cliente();
         novoCliente.setId(clienteInserirDTO.getId());
-        novoCliente.setEmail(clienteInserirDTO.getEmail());
         novoCliente.setNomeCompleto(clienteInserirDTO.getNomeCompleto());
+        novoCliente.setEmail(clienteInserirDTO.getEmail());
         novoCliente.setCpf(clienteInserirDTO.getCpf());
         novoCliente.setTelefone(clienteInserirDTO.getTelefone());
         novoCliente.setDataNascimento(clienteInserirDTO.getDataNascimento());
         novoCliente.setEndereco(enderecoViaCep);
 
         novoCliente = clienteRepository.save(novoCliente);
+
+        // mailConfig.sendEmail(clienteInserirDTO.getEmail(), "Atualização de cadastro de Usuário",
+        //         novoCliente.toString());
 
         return new ClienteDTO(novoCliente);
     }
