@@ -27,7 +27,7 @@ public class EnderecoService {
 
             String cepSemTraco = enderecoViaCep.get().getCep().replaceAll("-", "");
             enderecoViaCep.get().setCep(cepSemTraco);
-
+            
             enderecoViaCep.get().setComplemento(complemento);
             enderecoViaCep.get().setNumero(numero);
 

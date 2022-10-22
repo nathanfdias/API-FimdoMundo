@@ -4,9 +4,13 @@ import java.time.LocalDate;
 
 import br.org.serratec.model.Cliente;
 import br.org.serratec.model.Endereco;
-import lombok.Data;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
-@Data
+@Getter
+@Setter
+@NoArgsConstructor
 public class ClienteDTO {
 
     private Long id;

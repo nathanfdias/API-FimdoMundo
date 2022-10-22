@@ -56,7 +56,7 @@ public class ClienteService {
     public ClienteDTO inserir(ClienteInserirDTO clt) {
 
         if (clienteRepository.findByEmail(clt.getEmail()) != null) {
-            throw new EmailException("Email já existe na base");
+            throw new EmailException("Email já cadastrado");
         }
         if (clienteRepository.findByCpf(clt.getCpf()) != null) {
             throw new CpfException("Cpf já cadastrado");
