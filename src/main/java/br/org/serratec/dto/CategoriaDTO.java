@@ -4,6 +4,7 @@ import br.org.serratec.model.Categoria;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+
 @Setter
 @Getter
 @NoArgsConstructor
