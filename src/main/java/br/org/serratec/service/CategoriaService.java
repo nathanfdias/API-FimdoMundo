@@ -1,58 +1,65 @@
 package br.org.serratec.service;
 
-// import java.util.List;
-// import java.util.Optional;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
 
-// import javax.transaction.Transactional;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
-// import org.springframework.beans.factory.annotation.Autowired;
-// import org.springframework.stereotype.Service;
+import br.org.serratec.dto.CategoriaDTO;
+import br.org.serratec.model.Categoria;
+import br.org.serratec.repository.CategoriaRepository;
 
-// import br.org.serratec.model.Categoria;
-// import br.org.serratec.repository.CategoriaRepository;
-	
-	// @Service
-	public class CategoriaService {
+@Service
+public class CategoriaService {
 
-	    // @Autowired
-	    // CategoriaRepository categoriaRepository;
+	@Autowired
+	private CategoriaRepository categoriaRepository;
 
-	    // public List<Categoria> listar() {
-	    //     return categoriaRepository.findAll();
-	    // }
+	public List<CategoriaDTO> listar() {
 
-	    // public Optional<Categoria> findById(Long id) {
-	    //     return categoriaRepository.findById(id);
-	    // }
+		List<Categoria> categorias = categoriaRepository.findAll();
+		List<CategoriaDTO> categoriasDTO = new ArrayList<>();
 
-	    // @Transactional
-	    // public Categoria PostCategoria(Categoria categoria) {
-	    //     Optional<Categoria> categoriaTemp = categoriaRepository.findById(categoria.getIdCategoria());
-	    //     if (categoriaTemp.isPresent()) {
-	    //         return null;
-	    //     }
+		for (Categoria categoria : categorias) {
+			categoriasDTO.add(new CategoriaDTO(categoria));
+		}
 
-	    //     categoriaRepository.save(categoria);
-	    //     return categoria;
-	    // }
+		return categoriasDTO;
+	}
 
-	    // public Optional<Categoria> PutCategoria(Categoria categoria, Long id) {
-	    //     Optional<Categoria> categoriaTemp = categoriaRepository.findById(id);
-	    //     if (categoriaTemp.isPresent()) {
-	    //         categoria.setIdCategoria(id);
-	    //         categoria = categoriaRepository.save(categoria);
-	    //         return Optional.of(categoria);
-	    //     }
-	    //     return null;
-	    // }
+	public CategoriaDTO buscar(Long id) {
+		Optional<Categoria> categoria = categoriaRepository.findById(id);
 
-	    // public Boolean Delete(Long id) {
-	    //     Optional<Categoria> categoriaTemp = categoriaRepository.findById(id);
-	    //     if (!categoriaTemp.isPresent()) {
-	    //         return false;
-	    //     }
-	    //     categoriaRepository.deleteById(id);
-	    //     return true;
-	    // }
+		if (!categoria.isPresent()) {
+			return null;
+		}
+
+		return new CategoriaDTO(categoria.get());
+	}
+
+	public CategoriaDTO inserir(Categoria categoria) {
+
+		Categoria cat = new Categoria();
+
+		cat.setNome(categoria.getNome());
+		cat.setDescricao(categoria.getDescricao());
+
+		categoriaRepository.save(cat);
+
+		return new CategoriaDTO(cat);
+
+	}
+
+	public Boolean delete(Long id) {
+		Optional<Categoria> categoria = categoriaRepository.findById(id);
+
+		if (categoria.isPresent()) {
+			categoriaRepository.deleteById(id);
+			return true;
+		}
+		return false;
+
+	}
 }
-

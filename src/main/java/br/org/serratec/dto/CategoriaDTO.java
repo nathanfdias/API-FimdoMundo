@@ -1,16 +1,24 @@
 package br.org.serratec.dto;
 
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.Size;
+import br.org.serratec.model.Categoria;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
-import lombok.Data;
-@Data
+@Setter
+@Getter
+@NoArgsConstructor
 public class CategoriaDTO {
-	
-	@NotBlank
-	@Size(min = 2, max = 30)
+
+	private Long id;
+
 	private String nome;
 
-	@Size(min = 2, max = 200)
 	private String descricao;
+
+	public CategoriaDTO(Categoria cat) {
+		this.id = cat.getId();
+		this.nome = cat.getNome();
+		this.descricao = cat.getDescricao();
+	}
 }
