@@ -1,32 +1,26 @@
 package br.org.serratec.dto;
 
-import javax.validation.constraints.Min;
-import javax.validation.constraints.NotNull;
-
+import br.org.serratec.model.ItemPedido;
 import lombok.Data;
 
 @Data
 public class ItemPedidoDTO {
 
-    private Long idProduto;
-	private String nomeProduto;
-
-	@NotNull
-	@Min(1)
 	private Integer quantidadeItem;
-
-	@NotNull
-	@Min(0)
 	private Double precoVenda;
-
-    @NotNull
-	@Min(0)
     private Double valorBruto;
-
-	@Min(0)
     private Double percentualDesconto;
-
-    @NotNull
-	@Min(0)
 	private Double valorLiquido;
+	private ProdutoDTO produto;
+	private PedidoDTO pedido;
+
+	public ItemPedidoDTO(ItemPedido itemPedido){
+		this.quantidadeItem = itemPedido.getQuantidadeItem();
+		this.precoVenda = itemPedido.getPrecoVenda();
+		this.valorBruto = itemPedido.getValorBruto();
+		this.percentualDesconto = itemPedido.getPercentualDesconto();
+		this.valorLiquido = itemPedido.getValorLiquido();
+		this.pedido = new PedidoDTO(itemPedido.getPedido());
+        this.produto = new ProdutoDTO(itemPedido.getProduto());
+	}
 }
