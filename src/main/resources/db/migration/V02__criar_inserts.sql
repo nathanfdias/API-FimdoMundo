@@ -36,7 +36,7 @@ VALUES
 
 INSERT INTO pedido (data_pedido, data_entrega, data_envio, status, valor_total, id_cliente)
 VALUES
-('2020-01-01', '2020-01-02', '2020-02-03','E' ,850.00, 1);
+('2020-01-01', '2020-01-02', '2020-02-03','3' ,850.00, 1);
 
 INSERT INTO item_pedido (quantidade, preco_venda, percentual_desconto, valor_bruto, valor_liquido, id_produto, id_pedido)
 VALUES
