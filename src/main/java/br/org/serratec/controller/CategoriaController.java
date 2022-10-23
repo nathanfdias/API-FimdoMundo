@@ -32,12 +32,10 @@ public class CategoriaController {
     private CategoriaService categoriaService;
 
     @GetMapping
-    @ApiOperation(value = "Lista todos as categorias")
+    @ApiOperation(value = "Lista categorias")
     @ApiResponses(value = {
-            @ApiResponse(responseCode = "200", description = "Retorna todos as categorias"),
-            @ApiResponse(responseCode = "401", description = "Erro de autenticação"),
-            @ApiResponse(responseCode = "403", description = "Você não tem permissão para o recurso"),
-            @ApiResponse(responseCode = "404", description = "Cliente não encontrado"),
+            @ApiResponse(responseCode = "200", description = "Sucesso"),
+            @ApiResponse(responseCode = "404", description = "Categoria não encontrada"),
             @ApiResponse(responseCode = "500", description = "Erro na aplicação")
     })
     public ResponseEntity<List<CategoriaDTO>> listar() {
@@ -45,13 +43,11 @@ public class CategoriaController {
     }
 
     @GetMapping("{id}")
-    @ApiOperation(value = "Lista todos as categorias")
+    @ApiOperation(value = "Listar categorias Id")
     @ApiResponses(value = {
-            @ApiResponse(responseCode = "200", description = "Retorna todos as categorias"),
-            @ApiResponse(responseCode = "401", description = "Erro de autenticação"),
-            @ApiResponse(responseCode = "403", description = "Você não tem permissão para o recurso"),
-            @ApiResponse(responseCode = "404", description = "Cliente não encontrado"),
-            @ApiResponse(responseCode = "500", description = "Erro na aplicação")
+        @ApiResponse(responseCode = "200", description = "Sucesso"),
+        @ApiResponse(responseCode = "404", description = "Categoria não encontrada"),
+        @ApiResponse(responseCode = "500", description = "Erro na aplicação")
     })
     public ResponseEntity<CategoriaDTO> buscar(@PathVariable Long id) {
         CategoriaDTO categoria = categoriaService.buscar(id);
@@ -65,12 +61,10 @@ public class CategoriaController {
 
 
     @PostMapping
-    @ApiOperation(value = "Lista todos as categorias")
+    @ApiOperation(value = "Cadastro categoria", notes = "preencha com os dados")
     @ApiResponses(value = {
-            @ApiResponse(responseCode = "200", description = "Retorna todos as categorias"),
-            @ApiResponse(responseCode = "401", description = "Erro de autenticação"),
-            @ApiResponse(responseCode = "403", description = "Você não tem permissão para o recurso"),
-            @ApiResponse(responseCode = "404", description = "Cliente não encontrado"),
+            @ApiResponse(responseCode = "201", description = "Cadastrado"),
+            @ApiResponse(responseCode = "422", description = "Dados já existentes"),
             @ApiResponse(responseCode = "500", description = "Erro na aplicação")
     })
     public ResponseEntity<Object> update(@Valid @RequestBody Categoria categoria){
@@ -88,12 +82,9 @@ public class CategoriaController {
     }
 
     @DeleteMapping("{id}")
-    @ApiOperation(value = "Deleta uma categoria", notes = "preencha com o id da categoria")
+    @ApiOperation(value = "Deletar categoria", notes = "preencha com o id da categoria")
     @ApiResponses(value = {
-            @ApiResponse(responseCode = "204", description = "Deletado com sucesso"),
-            @ApiResponse(responseCode = "401", description = "Erro de autenticação"),
-            @ApiResponse(responseCode = "403", description = "Você não tem permissão para o recurso"),
-            @ApiResponse(responseCode = "404", description = "Cliente não encontrado"),
+            @ApiResponse(responseCode = "204", description = "Deletado"),
             @ApiResponse(responseCode = "500", description = "Erro na aplicação")
     })
     public ResponseEntity<?> deletar(@PathVariable Long id) {

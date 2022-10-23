@@ -1,6 +1,8 @@
 package br.org.serratec.model;
 
 import java.time.LocalDate;
+import java.util.HashSet;
+import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -11,6 +13,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
@@ -52,6 +55,9 @@ public class Pedido {
 	@ManyToOne
 	@JoinColumn(name = "id_cliente")
 	private Cliente cliente;
+
+	@OneToMany(mappedBy = "pedido")
+	private Set<ItemPedido> itens = new HashSet<>();
 
     // @OneToMany(mappedBy = "id.pedido")
     // private Set<ItemPedido> itens = new HashSet<>();

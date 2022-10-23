@@ -17,16 +17,16 @@ public class PedidoService {
     @Autowired
     private PedidoRepository pedidoRepository;
 
-    public List<PedidoDTO> listar() {
+    public List<Pedido> listar() {
         
         List<Pedido> pedidos = pedidoRepository.findAll();
         List<PedidoDTO> pedidosDTO = new ArrayList<>();
 
-        for (Pedido pedido : pedidos) {
-            pedidosDTO.add(new PedidoDTO(pedido));
+        for (Pedido pedidoDTO : pedidos) {
+            pedidosDTO.add(new PedidoDTO(pedidoDTO));
         }
 
-        return pedidosDTO;
+        return pedidos;
     }
 
     public PedidoDTO buscar(Long id) {

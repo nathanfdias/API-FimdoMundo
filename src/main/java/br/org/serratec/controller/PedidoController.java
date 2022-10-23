@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.org.serratec.dto.PedidoDTO;
+import br.org.serratec.model.Pedido;
 import br.org.serratec.service.PedidoService;
 
 @RestController
@@ -20,7 +21,7 @@ public class PedidoController {
     private PedidoService pedidoService;
 
     @GetMapping
-    public ResponseEntity<List<PedidoDTO>> listar(){
+    public ResponseEntity<List<Pedido>> listar(){
         return ResponseEntity.ok(pedidoService.listar());
     }
 

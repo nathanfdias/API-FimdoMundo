@@ -8,7 +8,6 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
-import javax.persistence.Transient;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 
@@ -59,12 +58,13 @@ public class ItemPedido {
     @JoinColumn(name = "id_produto")
     private Produto produto;
 
+    @JsonBackReference
 	@ManyToOne
     @JoinColumn(name = "id_pedido")
     private Pedido pedido;
     
-    @Transient
-	public Double getSubTotal() {
-		return precoVenda * quantidadeItem;
-	}
+    // @Transient
+	// public Double getSubTotal() {
+	// 	return precoVenda * quantidadeItem;
+	// }
 }

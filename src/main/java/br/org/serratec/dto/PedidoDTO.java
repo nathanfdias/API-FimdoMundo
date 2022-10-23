@@ -20,15 +20,19 @@ public class PedidoDTO {
 
     private Double valorTotal;
 
-    private ClienteDTO cliente;
+    // private ItemPedidoDTOPedido itemPedido;
+    // @Valid
+	// private Set<ItemPedidoDTOPedido> itemPedido = new HashSet<>();
+
+    private ClienteDTOItemPedido cliente;
     
     public PedidoDTO(Pedido pedido){
         this.dataPedido = pedido.getDataEnvio();
         this.dataEntrega = pedido.getDataEntrega();
         this.dataEnvio = pedido.getDataEnvio();
         this.pedidoStatus = pedido.getPedidoStatus();
-        this.cliente = new ClienteDTO(pedido.getCliente());
+        this.cliente = new ClienteDTOItemPedido(pedido.getCliente());
+        // this.itemPedido = ItemPedidoDTOPedido(pedido.getItemPedido());
     }
-    
-    
+
 }

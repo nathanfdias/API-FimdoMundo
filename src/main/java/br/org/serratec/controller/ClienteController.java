@@ -36,11 +36,9 @@ public class ClienteController {
     private ClienteService clienteService;
     
     @GetMapping
-    @ApiOperation(value = "Lista todos os clientes")
+    @ApiOperation(value = "Listar clientes")
     @ApiResponses(value = {
-            @ApiResponse(responseCode = "200", description = "Retorna todos os clientes"),
-            @ApiResponse(responseCode = "401", description = "Erro de autenticação"),
-            @ApiResponse(responseCode = "403", description = "Você não tem permissão para o recurso"),
+            @ApiResponse(responseCode = "200", description = "Sucesso"),
             @ApiResponse(responseCode = "404", description = "Cliente não encontrado"),
             @ApiResponse(responseCode = "500", description = "Erro na aplicação")
     })
@@ -49,11 +47,9 @@ public class ClienteController {
     }
     
     @GetMapping("{id}")
-    @ApiOperation(value = "Lista cliente pelo id")
+    @ApiOperation(value = "Listar cliente Id")
     @ApiResponses(value = {
-            @ApiResponse(responseCode = "200", description = "Retorna cliente do id referenciado"),
-            @ApiResponse(responseCode = "401", description = "Erro de autenticação"),
-            @ApiResponse(responseCode = "403", description = "Você não tem permissão para o recurso"),
+            @ApiResponse(responseCode = "200", description = "Sucesso"),
             @ApiResponse(responseCode = "404", description = "Cliente não encontrado"),
             @ApiResponse(responseCode = "500", description = "Erro na aplicação")
     })
@@ -68,13 +64,10 @@ public class ClienteController {
     }
 
     @PostMapping
-    @ApiOperation(value = "Cadastrado um novo cliente", notes = "preencha com os dados do clientes")
+    @ApiOperation(value = "Cadastro cliente", notes = "preencha com os dados")
     @ApiResponses(value = {
-            @ApiResponse(responseCode = "201", description = "Retorna o cliente cadastrado"),
-            @ApiResponse(responseCode = "401", description = "Erro de autenticação"),
-            @ApiResponse(responseCode = "403", description = "Você não tem permissão para o recurso"),
-            @ApiResponse(responseCode = "422", description = "Você credencias já cadastradas no banco de dados"),
-            @ApiResponse(responseCode = "404", description = "Cliente não encontrado"),
+            @ApiResponse(responseCode = "201", description = "Cadastrado"),
+            @ApiResponse(responseCode = "422", description = "Dados já existentes"),
             @ApiResponse(responseCode = "500", description = "Erro na aplicação")
     })
     public ResponseEntity<Object> inserir(@Valid @RequestBody ClienteInserirDTO cliente) {
@@ -89,13 +82,10 @@ public class ClienteController {
     }
 
     @PutMapping("{id}")
-    @ApiOperation(value = "Cadastrado um novo cliente", notes = "preencha com os dados do clientes")
+    @ApiOperation(value = "Atualizado", notes = "ID necessario")
     @ApiResponses(value = {
-            @ApiResponse(responseCode = "201", description = "Retorna o cliente cadastrado"),
-            @ApiResponse(responseCode = "401", description = "Erro de autenticação"),
-            @ApiResponse(responseCode = "403", description = "Você não tem permissão para o recurso"),
-            @ApiResponse(responseCode = "422", description = "Você credencias já cadastradas no banco de dados"),
-            @ApiResponse(responseCode = "404", description = "Cliente não encontrado"),
+            @ApiResponse(responseCode = "201", description = "Atualizado"),
+            @ApiResponse(responseCode = "422", description = "Dados já existentes"),
             @ApiResponse(responseCode = "500", description = "Erro na aplicação")
     })
     public ResponseEntity<Object> atualizar(@Valid @RequestBody ClienteInserirDTO cliente, @PathVariable Long id) {
@@ -118,12 +108,9 @@ public class ClienteController {
     }
 
     @DeleteMapping("{id}")
-    @ApiOperation(value = "Deleta um cliente", notes = "preencha com o id do cliente")
+    @ApiOperation(value = "Deletar cliente", notes = "preencha com o id do cliente")
     @ApiResponses(value = {
-            @ApiResponse(responseCode = "204", description = "Deletado com sucesso"),
-            @ApiResponse(responseCode = "401", description = "Erro de autenticação"),
-            @ApiResponse(responseCode = "403", description = "Você não tem permissão para o recurso"),
-            @ApiResponse(responseCode = "404", description = "Cliente não encontrado"),
+            @ApiResponse(responseCode = "204", description = "Deletado"),
             @ApiResponse(responseCode = "500", description = "Erro na aplicação")
     })
     public ResponseEntity<?> delete(@PathVariable Long id) {
