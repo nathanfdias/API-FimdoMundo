@@ -7,7 +7,6 @@ import java.util.List;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -24,7 +23,6 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import br.org.serratec.dto.ProdutoDTO;
 import br.org.serratec.dto.ProdutoInserirDTO;
-import br.org.serratec.model.Produto;
 import br.org.serratec.service.ProdutoService;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
@@ -135,26 +133,4 @@ public class ProdutoController {
 
         return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
     }
-
-    @GetMapping("/foto/{id}")
-    @ApiOperation(value = "Foto do produto")
-    @ApiResponses(value = {
-            @ApiResponse(responseCode = "200", description = "Retorna a foto do produtos"),
-            @ApiResponse(responseCode = "404", description = "produto não encontrado"),
-            @ApiResponse(responseCode = "500", description = "Erro na aplicação")
-    })
-    public ResponseEntity<byte[]> buscarPorFoto(@PathVariable Long id) {
-
-        Produto foto = produtoService.buscarFoto(id);
-
-        if (foto != null) {
-            HttpHeaders httpHeaders = new org.springframework.http.HttpHeaders();
-            httpHeaders.add("content-type", "image/png");
-            httpHeaders.add("content-length", String.valueOf(foto.getImagem().length));
-            return new ResponseEntity<>(foto.getImagem(), httpHeaders, HttpStatus.OK);
-        }
-
-        return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
-    }
-
 }

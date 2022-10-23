@@ -49,7 +49,7 @@
 5- Classe ItemPedido
 6- Classe Pedido
 7- Classe Produto
-8- Classe ItemPedidoPk (Talvez não utilizemos)
+8- Classe ItemPedidoPk (Talvez não utilizaremos)
 
 + Passo 5: db/Migration
 1- Criar Tabelas
@@ -84,9 +84,13 @@
 1- Cliente service
 2- Endereco service
 3- Categoria service
-4-  service
-5-  service
+4- Produto com foto service
+5- * service
 6- Criar funções para os CRUDS(Get,GetALL,Put,Post,Delete)
 
 + Passo 11: controller
 1- Controller Cliente
+2- Controller Categoria
+3- Controller Produto
+4- Controller Pedido
+5- Controller Item Pedido

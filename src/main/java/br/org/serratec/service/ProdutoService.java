@@ -49,15 +49,6 @@ public class ProdutoService {
         return inserirUriDaImagem(produto.get());
     }
 
-    public Produto buscarFoto(Long id) {
-        Optional<Produto> produto = produtoRepository.findById(id);
-        if (!produto.isPresent()) {
-            return null;
-        }
-
-        return produto.get();
-    }
-
     public ProdutoDTO inserir(ProdutoInserirDTO produtoDTO, MultipartFile file) throws IOException {
 
         Optional<Categoria> cat = categoriaRepository.findById(produtoDTO.getCategoria().getId());

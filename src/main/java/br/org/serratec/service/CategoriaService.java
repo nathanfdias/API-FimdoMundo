@@ -17,16 +17,6 @@ public class CategoriaService {
 	@Autowired
     private CategoriaRepository categoriaRepository;
 
-    public CategoriaDTO inserir(Categoria categoria) {
-
-        Categoria cat = new Categoria();
-        cat.setNome(categoria.getNome());
-        cat.setDescricao(categoria.getDescricao());
-        categoriaRepository.save(cat);
-
-        return new CategoriaDTO(cat);
-    }
-
     public List<CategoriaDTO> listar() {
 
         List<Categoria> categorias = categoriaRepository.findAll();
@@ -37,10 +27,9 @@ public class CategoriaService {
         }
 
         return categoriasDTO;
-
     }
-
-	public CategoriaDTO buscar(Long id) {
+    
+    public CategoriaDTO buscar(Long id) {
         Optional<Categoria> categoria = categoriaRepository.findById(id);
         if (!categoria.isPresent()) {
             return null;
@@ -48,6 +37,17 @@ public class CategoriaService {
 
         return new CategoriaDTO(categoria.get());
     }
+    
+    public CategoriaDTO inserir(Categoria categoria) {
+
+        Categoria cat = new Categoria();
+        cat.setNome(categoria.getNome());
+        cat.setDescricao(categoria.getDescricao());
+        categoriaRepository.save(cat);
+
+        return new CategoriaDTO(cat);
+    }
+
     
     public Boolean delete(Long id) {
         Optional<Categoria> categoria = categoriaRepository.findById(id);
