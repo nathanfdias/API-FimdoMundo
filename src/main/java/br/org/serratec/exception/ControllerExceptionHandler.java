@@ -30,6 +30,11 @@ public class ControllerExceptionHandler extends ResponseEntityExceptionHandler{
         return ResponseEntity.unprocessableEntity().body(cpfException);
     }
 
+    @ExceptionHandler(SenhaException.class)
+	public ResponseEntity<Object> senhaExceptionHandler(SenhaException ex){
+		return ResponseEntity.unprocessableEntity().body(ex.getMessage());
+    }
+
 	@Override
     protected ResponseEntity<Object> handleMethodArgumentNotValid(MethodArgumentNotValidException ex,
             HttpHeaders headers, HttpStatus status, WebRequest request) {
