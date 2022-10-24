@@ -7,8 +7,8 @@ VALUES
 
 INSERT INTO produto (nome, descricao, qtd_estoque, data_cadastro, valor_unitario, id_categoria, imagem)
 VALUES
-('Cadeira bx9', 'Cadeira ergonomica confortavel',3,'2019-10-01',850.00,3,null),
-('Badesh Branca','Escrivaninha para computador',4,'2019-10-01',480.00,3,null),
+('Cadeira Gamer', 'Cadeira ergonomica confortavel',3,'2019-10-01',850.00,3,null),
+('Mesa Computador Branca','Escrivaninha para computador',4,'2019-10-01',480.00,3,null),
 ('Do Inferno', 'Quadrinho do Alan More',2,'2019-10-01',150.00,2,null),
 ('Use a Cabeca Java','Livro principal para Java',10,'2019-10-01',75.00,2,null),
 ('Tablet Samsung','Tablet 10 polegadas',2,'2019-10-01',3850.00,1,null),
