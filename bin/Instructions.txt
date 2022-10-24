@@ -1,0 +1,92 @@
+- ABA UTILIZADA PARA A DESCRIÇÃO PASSO A PASSO DO PROJETO.
+
+-> SPRING INITIALIZR:
+    Dependencies:
+        - Spring Boot DevTools
+        - Spring Web
+        - Lombok
+        - Spring Data JPA
+        - PostgreSQL DRIVER
+        - Validation
+        - FlyWay Migration
+        - SpringFox-Boot Starter-Swagger-UI 
+        - SpringFox-Boot Starter
+        - Mail Sender
+
++ Passo 1: criação
+1- Criação tabela de Entidade e Relacionamento com LUCID, para facilitar a visualização
+2- Criação DataBase que será utilizada no programa (PostgreSQL) = "projetofinalapi"
+
++ Passo 2: application.properties
+1- Conectar API ao Banco 
+[
+    spring.datasource.url=jdbc:postgresql://localhost:5432/projetofinalAPI
+    spring.datasource.username=postgres
+    spring.datasource.password="SUA SENHA"
+
+    spring.jpa.show-sql=true
+    spring.jpa.hibernate.ddl-auto=none
+    spring.jpa.properties.hibernate.format_sql=true
+
+    spring.jackson.deserialization.fail-on-unknown-properties=true
+
+    spring.mvc.pathmatch.matching-strategy=ant-path-matcher
+]
+2- Dependencies JPA 
+3- Dependencies Swagger "spring.mvc.pathmatch.matching-strategy=ant_path_matcher"
+4- Configuracao do Email
+
++ Passo 3: swagger
+1- Adicionar dependencies ao pom.xml //www.mvnrepository.com
+2- Criar classe SwaggerConfig no pacote config
+3- Consulta Swagger: http://localhost:8080/swagger-ui/index.html
+
++ Passo 4: model
+1- Criar Pacote Model
+2- Classe Categoria
+3- Classe Cliente
+4- Classe Endereco
+5- Classe ItemPedido
+6- Classe Pedido
+7- Classe Produto
+8- Classe ItemPedidoPk (Talvez não utilizemos)
+
++ Passo 5: db/Migration
+1- Criar Tabelas
+2- Criar Inserts
+
+
++ Passo	6: repository
+1- Categoria repository
+2- Cliente repository
+3- Endereco repository
+4- Produto repository
+
++ Passo 7: exception
+1- Criar ControllerExceptionHandler 
+2- Criar ErroResposta
+3- Criar MailException
+4- Criar CpfException
+5- Criar EnumValidationException
+
++ Passo 8: dto
+1-
+2-
+3-
+4-
+
++ Passo 9: Config
+1- Criar Config
+2- MailConfig
+3- SwaggerConfig
+
++ Passo 10: service
+1- Cliente service
+2- Endereco service
+3- Categoria service
+4-  service
+5-  service
+6- Criar funções para os CRUDS(Get,GetALL,Put,Post,Delete)
+
++ Passo 11: controller
+1- Controller Cliente
