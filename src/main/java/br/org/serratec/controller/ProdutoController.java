@@ -7,6 +7,7 @@ import java.util.List;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -23,6 +24,7 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import br.org.serratec.dto.ProdutoDTO;
 import br.org.serratec.dto.ProdutoInserirDTO;
+import br.org.serratec.model.Produto;
 import br.org.serratec.service.ProdutoService;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
@@ -36,25 +38,27 @@ public class ProdutoController {
     private ProdutoService produtoService;
 
     @GetMapping
-    @ApiOperation(value = "Lista produtos")
+    @ApiOperation(value = "Lista todos os produtos")
     @ApiResponses(value = {
-            @ApiResponse(responseCode = "200", description = "Sucesso"),
+            @ApiResponse(responseCode = "200", description = "Retorna todos os produtos"),
             @ApiResponse(responseCode = "401", description = "Erro de autenticação"),
-            @ApiResponse(responseCode = "404", description = "Produto não encontrado"),
+            @ApiResponse(responseCode = "403", description = "Você não tem permissão para o recurso"),
+            @ApiResponse(responseCode = "404", description = "produto não encontrado"),
             @ApiResponse(responseCode = "500", description = "Erro na aplicação")
     })
     public ResponseEntity<List<ProdutoDTO>> listar() {
         return ResponseEntity.ok(produtoService.listar());
     }
 
-    @GetMapping("{id}")
-    @ApiOperation(value = "Lista produto Id")
+    @ApiOperation(value = "Lista produto pelo id")
     @ApiResponses(value = {
-            @ApiResponse(responseCode = "200", description = "Sucesso"),
+            @ApiResponse(responseCode = "200", description = "Retorna produto do id referenciado"),
             @ApiResponse(responseCode = "401", description = "Erro de autenticação"),
-            @ApiResponse(responseCode = "404", description = "Produto não encontrado"),
+            @ApiResponse(responseCode = "403", description = "Você não tem permissão para o recurso"),
+            @ApiResponse(responseCode = "404", description = "produto não encontrado"),
             @ApiResponse(responseCode = "500", description = "Erro na aplicação")
     })
+    @GetMapping("{id}")
     public ResponseEntity<ProdutoDTO> buscar(@PathVariable Long id) {
         ProdutoDTO produto = produtoService.buscar(id);
 
@@ -66,12 +70,15 @@ public class ProdutoController {
     }
 
     @PostMapping
-    @ApiOperation(value = "Cadastro produto", notes = "preencha com os dados")
+    @ApiOperation(value = "Cadastrado um novo produto", notes = "preencha com os dados do produtos")
     @ApiResponses(value = {
-            @ApiResponse(responseCode = "201", description = "Cadastrado"),
-            @ApiResponse(responseCode = "400", description = "Imagem vazia"),
+            @ApiResponse(responseCode = "201", description = "Retorna o produto cadastrado"),
+            @ApiResponse(responseCode = "400", description = "Imagem não foi selecionada"),
             @ApiResponse(responseCode = "401", description = "Erro de autenticação"),
+            @ApiResponse(responseCode = "403", description = "Você não tem permissão para o recurso"),
+            @ApiResponse(responseCode = "415", description = "Tipo de arquivo não suportado"),
             @ApiResponse(responseCode = "422", description = "Categoria não encontrada"),
+            @ApiResponse(responseCode = "404", description = "produto não encontrado"),
             @ApiResponse(responseCode = "500", description = "Erro na aplicação")
     })
     public ResponseEntity<Object> inserir(@RequestParam("file") MultipartFile file,
@@ -89,20 +96,23 @@ public class ProdutoController {
     }
 
     @PutMapping("{id}")
-    @ApiOperation(value = "Atualizado", notes = "preencha com os dados")
+    @ApiOperation(value = "Cadastrado um novo produto", notes = "preencha com os dados do produtos")
     @ApiResponses(value = {
-            @ApiResponse(responseCode = "201", description = "Atualizado"),
-            @ApiResponse(responseCode = "400", description = "Imagem vazia"),
+            @ApiResponse(responseCode = "201", description = "Retorna o produto cadastrado"),
+            @ApiResponse(responseCode = "400", description = "Imagem não foi selecionada"),
+            @ApiResponse(responseCode = "401", description = "Erro de autenticação"),
+            @ApiResponse(responseCode = "403", description = "Você não tem permissão para o recurso"),
+            @ApiResponse(responseCode = "415", description = "Tipo de arquivo não suportado"),
             @ApiResponse(responseCode = "422", description = "Categoria não encontrada"),
-            @ApiResponse(responseCode = "404", description = "Produto não encontrado"),
+            @ApiResponse(responseCode = "404", description = "produto não encontrado"),
             @ApiResponse(responseCode = "500", description = "Erro na aplicação")
     })
     public ResponseEntity<Object> atualizar(@RequestParam("file") MultipartFile file,
             @Valid @RequestPart ProdutoInserirDTO produto, @PathVariable Long id) throws IOException {
 
-        ProdutoDTO produt = produtoService.buscar(id);
+        ProdutoDTO p = produtoService.buscar(id);
 
-        if (produt != null) {
+        if (p != null) {
             try {
                 ProdutoDTO produtoDTO = produtoService.atualizar(id, produto, file);
                 URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}")
@@ -118,9 +128,12 @@ public class ProdutoController {
     }
 
     @DeleteMapping("{id}")
-    @ApiOperation(value = "Deleta Produto", notes = "preencha com o id do produto")
+    @ApiOperation(value = "Deleta um cliente", notes = "preencha com o id do cliente")
     @ApiResponses(value = {
-            @ApiResponse(responseCode = "204", description = "Deletado"),
+            @ApiResponse(responseCode = "204", description = "Deletado com sucesso"),
+            @ApiResponse(responseCode = "401", description = "Erro de autenticação"),
+            @ApiResponse(responseCode = "403", description = "Você não tem permissão para o recurso"),
+            @ApiResponse(responseCode = "404", description = "Cliente não encontrado"),
             @ApiResponse(responseCode = "500", description = "Erro na aplicação")
     })
     public ResponseEntity<?> delete(@PathVariable Long id) {
@@ -133,4 +146,28 @@ public class ProdutoController {
 
         return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
     }
+
+    @GetMapping("/foto/{id}")
+    @ApiOperation(value = "Mostra a foto do produto")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Retorna a foto do produtos"),
+            @ApiResponse(responseCode = "401", description = "Erro de autenticação"),
+            @ApiResponse(responseCode = "403", description = "Você não tem permissão para o recurso"),
+            @ApiResponse(responseCode = "404", description = "produto não encontrado"),
+            @ApiResponse(responseCode = "500", description = "Erro na aplicação")
+    })
+    public ResponseEntity<byte[]> buscarPorFoto(@PathVariable Long id) {
+
+        Produto foto = produtoService.buscarFoto(id);
+
+        if (foto != null) {
+            HttpHeaders httpHeaders = new org.springframework.http.HttpHeaders();
+            httpHeaders.add("content-type", "image/png");
+            httpHeaders.add("content-length", String.valueOf(foto.getImagem().length));
+            return new ResponseEntity<>(foto.getImagem(), httpHeaders, HttpStatus.OK);
+        }
+
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+    }
+
 }
