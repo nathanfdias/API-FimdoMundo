@@ -15,7 +15,6 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import javax.validation.constraints.NotNull;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 
@@ -47,9 +46,8 @@ public class Pedido {
 	@Column(name="status", nullable = false)
 	private Status status;
 
-    @NotNull
 	@Column(name = "valor_total")
-	private Double valorTotal;
+	private Double valorTotal = 0.0;
 	
 	@JsonBackReference
 	@ManyToOne

@@ -17,6 +17,10 @@ public class ItemPedidoInserirDTO {
     @NotNull(message = "Digite uma quantidade valida")
     private Integer quantidade;
 
+    private Double percentualDesconto;
+    // private Double valorBruto;
+    // private Double valorLiquido;
+
     private ProdutoInserirPedidoDTO pedido;
     
     private ProdutoInserirItemDTO produto;
@@ -24,6 +28,9 @@ public class ItemPedidoInserirDTO {
     public ItemPedidoInserirDTO(ItemPedido itemPedido) {
         this.id = itemPedido.getId();
         this.quantidade = itemPedido.getQuantidade();
+        this.percentualDesconto = itemPedido.getPercentualDesconto();
+        // this.valorBruto = itemPedido.getValorBruto();
+        // this.valorLiquido = itemPedido.getValorLiquido();
         // this.quantidade = itemPedido.getQuantidade();
         this.pedido = new ProdutoInserirPedidoDTO(itemPedido.getPedido());
         this.produto = new ProdutoInserirItemDTO(itemPedido.getProduto());
