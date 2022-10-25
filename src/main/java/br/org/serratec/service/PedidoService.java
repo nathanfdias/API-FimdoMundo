@@ -49,8 +49,9 @@ public class PedidoService {
         }
         
         Pedido ped = new Pedido();
-        ped.setDataPedido(LocalDate.now());
+        ped.setDataPedido(pedido.getDataPedido());
         ped.setDataEnvio(pedido.getDataEnvio());
+        // ped.setDataPedido(pedido.getDataPedido());
         ped.setDataEntrega(pedido.getDataEntrega());
         ped.setStatus(pedido.getStatus());
         ped.setCliente(clt.get());

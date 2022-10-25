@@ -80,78 +80,89 @@ public class ItemPedidoService {
         return itemPedidoDTO;
     }
 
-    // public ItemPedidoDTO inserir(ItemPedidoInserirDTO itemPedido) {
-    //     Optional<Produto> produtosListados = produtoRepository.findById(itemPedido.getProduto().getIdProduto());
-    //     Optional<Pedido> pedido = pedidoRepository.findById(itemPedido.getPedido().getId());
-    //     Optional<Produto> produtos = produtoRepository.findById(itemPedido.getProduto().getIdProduto());
+    public ItemPedidoDTO inserir(ItemPedidoInserirDTO itemPedido) {
+        // Optional<Produto> produtosListados = produtoRepository.findById(itemPedido.getProduto().getIdProduto());
+        Optional<Pedido> pedido = pedidoRepository.findById(itemPedido.getPedido().getId());
+        Optional<Produto> produtos = produtoRepository.findById(itemPedido.getProduto().getIdProduto());
 
-    //     if (produtos.get().getQuantidadeEstoque() < itemPedido.getQuantidade() || itemPedido.getQuantidade() <= 0) {
-    //         throw new QuantidadeEstoqueException("Quantidade Invalida !");
-    //     }
+        if (produtos.get().getQuantidadeEstoque() < itemPedido.getQuantidade() || itemPedido.getQuantidade() <= 0) {
+            throw new QuantidadeEstoqueException("Quantidade Invalida !");
+        }
 
-    //     Double subTotal = 0.0;
+        Double total = 0.0;
+        Double desconto = 0.0;
+        Double valorBruto = 0.0;
+        Double valorLiquido = 0.0;
 
-    //     subTotal += produtosListados.get().getValorUnitario() * itemPedido.getQuantidade();
+        desconto = 1 - (itemPedido.getPercentualDesconto() / 100);
+        //TOTAL DE TODOS PRODUTOS_LISTADOS DO CLIENTE
+        valorBruto = produtos.get().getValorUnitario() * itemPedido.getQuantidade();
+        valorLiquido = (produtos.get().getValorUnitario() * itemPedido.getQuantidade())* desconto;
+        total += (produtos.get().getValorUnitario() * itemPedido.getQuantidade())* desconto;
 
-    //     produtos.get().setQuantidadeEstoque(produtos.get().getQuantidadeEstoque() - itemPedido.getQuantidade());
-    //     produtoRepository.save(produtos.get());
 
-    //     ItemPedido item = new ItemPedido();
-    //     item.setQuantidade(itemPedido.getQuantidade());
-    //     item.setPrecoVenda(subTotal);
-    //     item.setPedido(pedido.get());
-    //     item.setProduto(produtos.get());
-    //     item = itemPedidoRepository.save(item);
+        produtos.get().setQuantidadeEstoque(produtos.get().getQuantidadeEstoque() - itemPedido.getQuantidade());
+        produtoRepository.save(produtos.get());
 
-    //     return InserirUrlImagemItem(item);
-    // }
+        ItemPedido item = new ItemPedido();
+        item.setQuantidade(itemPedido.getQuantidade());
+        item.setPrecoVenda(total);
+        item.setPercentualDesconto(itemPedido.getPercentualDesconto());
+        item.setValorBruto(valorBruto);
+        item.setValorLiquido(valorLiquido);
+        item.setPedido(pedido.get());
+        item.setProduto(produtos.get());
+        item = itemPedidoRepository.save(item);
 
-    // public ItemPedidoDTO atualizar(ItemPedidoInserirDTO itemPedido, Long id) {
+        return InserirUrlImagemItem(item);
+    }
 
-    //     itemPedido.setId(id);
+    public ItemPedidoDTO atualizar(ItemPedidoInserirDTO itemPedido, Long id) {
 
-    //     Optional<ItemPedido> itemPedidos = itemPedidoRepository.findById(id);
-    //     Optional<Produto> produtosListados = produtoRepository.findById(itemPedido.getProduto().getIdProduto());
-    //     Optional<Pedido> pedido = pedidoRepository.findById(itemPedido.getPedido().getId());
-    //     Optional<Produto> produtos = produtoRepository.findById(itemPedido.getProduto().getIdProduto());
+        itemPedido.setId(id);
 
-    //     if (!itemPedido.getPedido().getId().equals(itemPedidos.get().getPedido().getId())){
-    //         throw new PedidoIdException("Não é possível alterar o id !");
-    //     }
+        Optional<ItemPedido> itemPedidos = itemPedidoRepository.findById(id);
+        Optional<Produto> produtosListados = produtoRepository.findById(itemPedido.getProduto().getIdProduto());
+        Optional<Pedido> pedido = pedidoRepository.findById(itemPedido.getPedido().getId());
+        Optional<Produto> produtos = produtoRepository.findById(itemPedido.getProduto().getIdProduto());
 
-    //     if (!itemPedido.getQuantidade().equals(itemPedidos.get().getProduto().getQuantidadeEstoque())) {
-    //         if (itemPedido.getQuantidade() > itemPedidos.get().getProduto().getQuantidadeEstoque()) {
-    //             if (produtos.get().getQuantidadeEstoque() < itemPedido.getQuantidade() || itemPedido.getQuantidade() <= 0) {
-    //                 throw new QuantidadeEstoqueException("Quantidade Invalida !");
-    //             }
-    //             produtos.get().setQuantidadeEstoque(produtos.get().getQuantidadeEstoque() - itemPedido.getQuantidade());
-    //         }
-    //         if (itemPedido.getQuantidade() < produtos.get().getQuantidadeEstoque()) {
+        if (!itemPedido.getPedido().getId().equals(itemPedidos.get().getPedido().getId())){
+            throw new PedidoIdException("Não é possível alterar o id !");
+        }
+
+        if (!itemPedido.getQuantidade().equals(itemPedidos.get().getProduto().getQuantidadeEstoque())) {
+            if (itemPedido.getQuantidade() > itemPedidos.get().getProduto().getQuantidadeEstoque()) {
+                if (produtos.get().getQuantidadeEstoque() < itemPedido.getQuantidade() || itemPedido.getQuantidade() <= 0) {
+                    throw new QuantidadeEstoqueException("Quantidade Invalida !");
+                }
+                produtos.get().setQuantidadeEstoque(produtos.get().getQuantidadeEstoque() - itemPedido.getQuantidade());
+            }
+            if (itemPedido.getQuantidade() < produtos.get().getQuantidadeEstoque()) {
                  
-    //             Integer produtoQuantidade = produtos.get().getQuantidadeEstoque()  - itemPedido.getQuantidade();
+                Integer produtoQuantidade = produtos.get().getQuantidadeEstoque()  - itemPedido.getQuantidade();
     
-    //             System.out.println(produtos.get().getQuantidadeEstoque() + produtoQuantidade);
+                System.out.println(produtos.get().getQuantidadeEstoque() + produtoQuantidade);
     
-    //             produtos.get().setQuantidadeEstoque(produtoQuantidade);
-    //         }
-    //     }
+                produtos.get().setQuantidadeEstoque(produtoQuantidade);
+            }
+        }
 
-    //     produtoRepository.save(produtos.get());
+        produtoRepository.save(produtos.get());
 
-    //     Double subTotal = 0.0;
+        Double subTotal = 0.0;
 
-    //     subTotal += produtosListados.get().getValorUnitario() * itemPedido.getQuantidade();
+        subTotal += produtosListados.get().getValorUnitario() * itemPedido.getQuantidade();
 
-    //     ItemPedido item = new ItemPedido();
-    //     item.setId(itemPedido.getId());
-    //     item.setQuantidade(itemPedido.getQuantidade());
-    //     item.setPrecoVenda(subTotal);
-    //     item.setPedido(pedido.get());
-    //     item.setProduto(produtos.get());
-    //     item = itemPedidoRepository.save(item);
+        ItemPedido item = new ItemPedido();
+        item.setId(itemPedido.getId());
+        item.setQuantidade(itemPedido.getQuantidade());
+        item.setPrecoVenda(subTotal);
+        item.setPedido(pedido.get());
+        item.setProduto(produtos.get());
+        item = itemPedidoRepository.save(item);
 
-    //     return InserirUrlImagemItem(item);
-    // }
+        return InserirUrlImagemItem(item);
+    }
 
     public Boolean delete(Long id) {
 

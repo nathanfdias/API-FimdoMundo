@@ -21,10 +21,10 @@ import br.org.serratec.service.UsuarioService;
 @RestController
 @RequestMapping("/usuarios")
 public class UsuarioController {
-	
+
 	@Autowired
 	UsuarioService usuarioService;
-	
+
    @GetMapping
    public ResponseEntity<List<UsuarioDTO>> listar(){
 	   return ResponseEntity.ok(usuarioService.lista());
@@ -40,6 +40,6 @@ public class UsuarioController {
            .toUri();
        return ResponseEntity.created(uri).body(usuario);
    }
-	  
+
 
 }
