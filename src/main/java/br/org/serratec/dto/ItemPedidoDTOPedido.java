@@ -18,7 +18,7 @@ public class ItemPedidoDTOPedido {
 
 
 	public ItemPedidoDTOPedido(ItemPedido itemPedido){
-		this.quantidadeItem = itemPedido.getQuantidadeItem();
+		this.quantidadeItem = itemPedido.getQuantidade();
 		this.precoVenda = itemPedido.getPrecoVenda();
 		this.valorBruto = itemPedido.getValorBruto();
 		this.percentualDesconto = itemPedido.getPercentualDesconto();

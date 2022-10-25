@@ -2,7 +2,7 @@ package br.org.serratec.dto;
 
 import java.time.LocalDate;
 
-import br.org.serratec.enums.PedidoStatus;
+import br.org.serratec.enums.Status;
 import br.org.serratec.model.Pedido;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -16,7 +16,7 @@ public class PedidoDTO {
     private LocalDate dataPedido;
     private LocalDate dataEntrega;
     private LocalDate dataEnvio;
-    private PedidoStatus pedidoStatus;
+    private Status status;
 
     private Double valorTotal;
 
@@ -30,7 +30,7 @@ public class PedidoDTO {
         this.dataPedido = pedido.getDataEnvio();
         this.dataEntrega = pedido.getDataEntrega();
         this.dataEnvio = pedido.getDataEnvio();
-        this.pedidoStatus = pedido.getPedidoStatus();
+        this.status = pedido.getStatus();
         this.cliente = new ClienteDTOItemPedido(pedido.getCliente());
         // this.itemPedido = ItemPedidoDTOPedido(pedido.getItemPedido());
     }

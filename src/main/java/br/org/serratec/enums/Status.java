@@ -14,7 +14,7 @@ import lombok.Setter;
 
 
 @AllArgsConstructor
-public enum PedidoStatus {
+public enum Status {
 
     AGUARDANDO_PAGAMENTO("1"),
 	PAGO("2"),
@@ -27,8 +27,8 @@ public enum PedidoStatus {
     private String status;
 
     @JsonCreator
-    public static PedidoStatus verifica(String valor) throws EnumValidationException {
-        for (PedidoStatus estados : PedidoStatus.values()) {
+    public static Status verifica(String valor) throws EnumValidationException {
+        for (Status estados : Status.values()) {
             if (valor.equals(estados.getStatus())) {
                 return estados;
             }

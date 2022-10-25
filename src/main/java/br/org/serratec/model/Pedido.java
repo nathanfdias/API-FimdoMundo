@@ -19,7 +19,7 @@ import javax.validation.constraints.NotNull;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 
-import br.org.serratec.enums.PedidoStatus;
+import br.org.serratec.enums.Status;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -45,7 +45,7 @@ public class Pedido {
 	
     @Enumerated(EnumType.ORDINAL)
 	@Column(name="status", nullable = false)
-	private PedidoStatus pedidoStatus;
+	private Status status;
 
     @NotNull
 	@Column(name = "valor_total")

@@ -34,7 +34,7 @@ public class ItemPedido {
     @NotNull
     @Min(1)
     @Column(name="quantidade", nullable = false)
-    private Integer quantidadeItem;
+    private Integer quantidade;
 
     @NotNull
 	@Column(name="preco_venda")

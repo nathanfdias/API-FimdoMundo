@@ -30,9 +30,20 @@ public class ControllerExceptionHandler extends ResponseEntityExceptionHandler{
         return ResponseEntity.unprocessableEntity().body(cpfException);
     }
 
+    @ExceptionHandler(FindIdException.class)
+    public ResponseEntity<Object> handleFindIdException(FindIdException ex) {
+        FindIdException findIdException = new FindIdException(ex.getMessage());
+        return ResponseEntity.unprocessableEntity().body(findIdException);
+    }
+
     @ExceptionHandler(SenhaException.class)
 	public ResponseEntity<Object> senhaExceptionHandler(SenhaException ex){
 		return ResponseEntity.unprocessableEntity().body(ex.getMessage());
+    }
+
+    @ExceptionHandler(PedidoIdException.class)
+    public ResponseEntity<Object> handlePedidoIdExceptionException(PedidoIdException ex) {
+        return ResponseEntity.unprocessableEntity().body(ex.getMessage());
     }
 
 	@Override
