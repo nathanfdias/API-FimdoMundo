@@ -60,13 +60,12 @@ public class Pedido {
     // @OneToMany(mappedBy = "id.pedido")
     // private Set<ItemPedido> itens = new HashSet<>();
 
-	// @Transient
-	// public Double getTotal() {
-	// 	double soma = 0.0;
-	// 	for(ItemPedido item : itens) {
-	// 		soma += item.getSubTotal();
-	// 	}
-	// 	return soma;
-	// }
+	public Double getValorTotal() {
+		double soma = 0.0;
+		for(ItemPedido item : itens) {
+			soma += item.getValorLiquido();
+		}
+		return soma;
+	}
 
 }

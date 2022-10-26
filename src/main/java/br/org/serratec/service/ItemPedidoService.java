@@ -98,7 +98,7 @@ public class ItemPedidoService {
         //TOTAL DE TODOS PRODUTOS_LISTADOS DO CLIENTE
         valorBruto = produtos.get().getValorUnitario() * itemPedido.getQuantidade();
         valorLiquido = (produtos.get().getValorUnitario() * itemPedido.getQuantidade())* desconto;
-        total += (produtos.get().getValorUnitario() * itemPedido.getQuantidade())* desconto;
+        // total += (produtos.get().getValorUnitario() * itemPedido.getQuantidade())* desconto;
 
 
         produtos.get().setQuantidadeEstoque(produtos.get().getQuantidadeEstoque() - itemPedido.getQuantidade());
@@ -106,7 +106,7 @@ public class ItemPedidoService {
 
         ItemPedido item = new ItemPedido();
         item.setQuantidade(itemPedido.getQuantidade());
-        item.setPrecoVenda(total);
+        item.setPrecoVenda(pedido.get().getValorTotal());
         item.setPercentualDesconto(itemPedido.getPercentualDesconto());
         item.setValorBruto(valorBruto);
         item.setValorLiquido(valorLiquido);
