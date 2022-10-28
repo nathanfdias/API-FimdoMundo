@@ -12,6 +12,7 @@ import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -36,6 +37,7 @@ public class ItemPedido {
     @Column(name="quantidade", nullable = false)
     private Integer quantidade;
 
+    @JsonIgnore
     @NotNull
 	@Column(name="preco_venda")
 	private Double precoVenda;
@@ -67,4 +69,5 @@ public class ItemPedido {
 	// public Double getSubTotal() {
 	// 	return precoVenda * quantidadeItem;
 	// }
+    
 }

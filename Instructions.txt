@@ -12,6 +12,7 @@
         - SpringFox-Boot Starter-Swagger-UI 
         - SpringFox-Boot Starter
         - Mail Sender
+        - Security
 
 + Passo 1: criação
 1- Criação tabela de Entidade e Relacionamento com LUCID, para facilitar a visualização
@@ -50,6 +51,8 @@
 6- Classe Pedido
 7- Classe Produto
 8- Classe ItemPedidoPk (Talvez não utilizaremos)
+9- Classe Perfil
+10- Classe UsuarioPerfil e UsuarioPerfilDTO
 
 + Passo 5: db/Migration
 1- Criar Tabelas
@@ -61,6 +64,8 @@
 2- Cliente repository
 3- Endereco repository
 4- Produto repository
+5- UsuarioPerfil repository
+6- Usuario repository 
 
 + Passo 7: exception
 1- Criar ControllerExceptionHandler 
@@ -68,12 +73,12 @@
 3- Criar MailException
 4- Criar CpfException
 5- Criar EnumValidationException
+6- Criar PedidoException
+7- Criar QuatidadeEstoqueException
+8- Criar SenhaException
 
 + Passo 8: dto
-1-
-2-
-3-
-4-
+1- *
 
 + Passo 9: Config
 1- Criar Config
@@ -94,3 +99,5 @@
 3- Controller Produto
 4- Controller Pedido
 5- Controller Item Pedido
+6- Controller Usuario
+7- Controller Relatorio

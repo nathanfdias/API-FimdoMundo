@@ -6,6 +6,8 @@ import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
+import javax.transaction.Transactional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -25,18 +27,20 @@ public class PedidoService {
     @Autowired
     private ClienteRepository clienteRepository;
 
+    @Transactional
     public List<PedidoDTO> listar() {
         List<Pedido> result = pedidoRepository.findAll();
         return result.stream().map(x -> new PedidoDTO(x)).collect(Collectors.toList());
     }
 
+    @Transactional
     public PedidoDTO buscar(Long id) {
         Optional<Pedido> pedido = pedidoRepository.findById(id);
         
         if (!pedido.isPresent()) {
             return null;
         }
-
+        
         return new PedidoDTO(pedido.get());
     }
 
@@ -56,6 +60,8 @@ public class PedidoService {
         ped.setStatus(pedido.getStatus());
         ped.setCliente(clt.get());
         ped = pedidoRepository.save(ped);
+
+        // RelatorioDTO relatorio = new RelatorioDTO(ped, clt);
 
         return new PedidoDTO(ped);
     }

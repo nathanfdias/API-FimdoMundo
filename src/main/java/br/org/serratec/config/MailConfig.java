@@ -11,13 +11,13 @@ public class MailConfig {
     @Autowired
     private JavaMailSender javaMailSender;
 
-    public void sendEmail(String para, String assunto, String texto) {
+    public void sendEmail(String clienteEmail, String assunto, String texto) {
         SimpleMailMessage message = new SimpleMailMessage();
         message.setFrom("nathan.dias@aluno.senai.br");
-        message.setTo(para);
+        message.setTo(clienteEmail);
         message.setSubject(assunto);
         message.setText(texto);
-        message.setText("Dados do cadastro do usuário:\n" + texto + "\n\n\n\n" + "Serratec Residência-2022");
+        message.setText("Email:\n" + texto + "\n\n\n\n" + "Serratec Residência-2022");
         javaMailSender.send(message);
     }
 }

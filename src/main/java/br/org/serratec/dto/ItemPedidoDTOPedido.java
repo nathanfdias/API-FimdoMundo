@@ -11,7 +11,6 @@ import lombok.Setter;
 public class ItemPedidoDTOPedido {
 
 	private Integer quantidadeItem;
-	private Double precoVenda;
     private Double valorBruto;
     private Double percentualDesconto;
 	private Double valorLiquido;
@@ -19,7 +18,6 @@ public class ItemPedidoDTOPedido {
 
 	public ItemPedidoDTOPedido(ItemPedido itemPedido){
 		this.quantidadeItem = itemPedido.getQuantidade();
-		this.precoVenda = itemPedido.getPrecoVenda();
 		this.valorBruto = itemPedido.getValorBruto();
 		this.percentualDesconto = itemPedido.getPercentualDesconto();
 		this.valorLiquido = itemPedido.getValorLiquido();

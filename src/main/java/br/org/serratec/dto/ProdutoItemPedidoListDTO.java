@@ -33,4 +33,12 @@ public class ProdutoItemPedidoListDTO implements Serializable {
         this.valorUnitario = produto.getValorUnitario();
         this.categoria = produto.getCategoria();
     }
+
+    @Override
+    public String toString() {
+        return "\nId Produto: " + getId() +
+        "\nNome: " + getNome() +
+        "\nDescrição: " + getDescricao() +
+        "\nValor unitário: " + getValorUnitario();
+    }
 }

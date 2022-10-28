@@ -89,7 +89,6 @@ public class ItemPedidoService {
             throw new QuantidadeEstoqueException("Quantidade Invalida !");
         }
 
-        Double total = 0.0;
         Double desconto = 0.0;
         Double valorBruto = 0.0;
         Double valorLiquido = 0.0;

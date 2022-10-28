@@ -15,6 +15,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.transaction.Transactional;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 
@@ -54,18 +55,24 @@ public class Pedido {
 	@JoinColumn(name = "id_cliente")
 	private Cliente cliente;
 
+	@JsonBackReference
 	@OneToMany(mappedBy = "pedido")
 	private Set<ItemPedido> itens = new HashSet<>();
 
     // @OneToMany(mappedBy = "id.pedido")
     // private Set<ItemPedido> itens = new HashSet<>();
 
+	@Transactional
 	public Double getValorTotal() {
 		double soma = 0.0;
 		for(ItemPedido item : itens) {
 			soma += item.getValorLiquido();
 		}
 		return soma;
+	}
+
+	public String getEmail() {
+		return null;
 	}
 
 }
