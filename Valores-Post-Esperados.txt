@@ -1,0 +1,62 @@
+Basic Auth: mariajoao@email.com 123456
+
+Exemplos:
+
+POST Cliente JSON: 
+{
+  "cpf": "56761778026",
+  "dataNascimento": "2001-10-11",
+  "email": "nathanfaria9@gmail.com",
+  "endereco": {
+    "cep": "28620000",
+    "complemento": "Apartamento",
+    "numero": 11
+  },
+  "nomeCompleto": "Nathan",
+  "telefone": "2291919292"
+}
+
+POST Categoria JSON:
+{
+	"nome": "TESTE",
+	"descricao": "cadeiras, mesas, e materiais de escritório"
+}
+
+POST Produto JSON:
+{
+      "nome": "trex", 
+        "descricao": "camisa da adidas preta",
+    "dataCadastro": "2022-01-01",
+      "quantidadeEstoque": 35,
+    "valorUnitario": 1000,
+    "categoria": {
+        "id": "1"
+    }
+}
+
+POST Pedido JSON:
+{
+  "cliente": {
+    "id": 6
+  },
+  "dataEntrega": "2022-10-25",
+  "dataEnvio": "2022-10-15",
+  "dataPedido": "2022-10-05",
+  "id": 0,
+  "status": "3"
+}
+
+POST ItemPedido JSON:
+{
+  "id": 0,
+  "pedido": {
+    "id": 2
+  },
+  "percentualDesconto": 10,
+  "produto": {
+    "idProduto": 6
+  },
+  "quantidade": 1
+}
+
+

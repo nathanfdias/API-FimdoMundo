@@ -1,0 +1,2204 @@
+{
+	"log": {
+		"version": "1.2",
+		"creator": {
+			"name": "Insomnia REST Client",
+			"version": "insomnia.desktop.app:v2022.6.0"
+		},
+		"entries": [
+			{
+				"startedDateTime": "2022-10-28T16:23:25.273Z",
+				"time": 4260.6359999999995,
+				"request": {
+					"method": "GET",
+					"url": "http://localhost:8080/relatorio/2",
+					"httpVersion": "HTTP/1.1",
+					"cookies": [],
+					"headers": [
+						{
+							"name": "Authorization",
+							"value": "Basic bWFyaWFqb2FvQGVtYWlsLmNvbToxMjM0NTY="
+						}
+					],
+					"queryString": [],
+					"postData": {
+						"mimeType": "",
+						"text": "",
+						"params": []
+					},
+					"headersSize": -1,
+					"bodySize": -1,
+					"settingEncodeUrl": true
+				},
+				"response": {
+					"status": 200,
+					"statusText": "",
+					"httpVersion": "HTTP/1.1",
+					"cookies": [],
+					"headers": [
+						{
+							"name": "Vary",
+							"value": "Origin"
+						},
+						{
+							"name": "Vary",
+							"value": "Access-Control-Request-Method"
+						},
+						{
+							"name": "Vary",
+							"value": "Access-Control-Request-Headers"
+						},
+						{
+							"name": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"name": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"name": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"name": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"name": "Expires",
+							"value": "0"
+						},
+						{
+							"name": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"name": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"name": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"name": "Date",
+							"value": "Fri, 28 Oct 2022 16:15:38 GMT"
+						}
+					],
+					"content": {
+						"size": 442,
+						"mimeType": "application/json",
+						"text": "{\"id\":2,\"dataPedido\":\"2022-10-15\",\"valorTotal\":45.0,\"email\":\"nathanfaria9@gmail.com\",\"items\":[{\"id\":2,\"quantidade\":1,\"precoDesconto\":null,\"percentualDesconto\":10.0,\"valorBruto\":50.0,\"valorLiquido\":45.0,\"produto\":{\"id\":6,\"nome\":\"Mouse Logitec\",\"descricao\":\"Mouse com 3 botoes e uma rodinha\",\"dataCadastro\":\"2019-10-01\",\"valorUnitario\":50.0,\"categoria\":{\"id\":3,\"nome\":\"LIVRARIA\",\"descricao\":\"livros, revistas, quadrinhos\"},\"linkImagem\":null}}]}"
+					},
+					"redirectURL": "",
+					"headersSize": -1,
+					"bodySize": -1
+				},
+				"cache": {},
+				"timings": {
+					"blocked": -1,
+					"dns": -1,
+					"connect": -1,
+					"send": 0,
+					"wait": 4260.6359999999995,
+					"receive": 0,
+					"ssl": -1
+				},
+				"comment": "EnvioRelatorio"
+			},
+			{
+				"startedDateTime": "2022-10-28T16:23:25.273Z",
+				"time": 624.626,
+				"request": {
+					"method": "DELETE",
+					"url": "http://localhost:8080/pedidos/3",
+					"httpVersion": "HTTP/1.1",
+					"cookies": [],
+					"headers": [
+						{
+							"name": "Authorization",
+							"value": "Basic bWFyaWFqb2FvQGVtYWlsLmNvbToxMjM0NTY="
+						}
+					],
+					"queryString": [],
+					"postData": {
+						"mimeType": "",
+						"text": "",
+						"params": []
+					},
+					"headersSize": -1,
+					"bodySize": -1,
+					"settingEncodeUrl": true
+				},
+				"response": {
+					"status": 500,
+					"statusText": "",
+					"httpVersion": "HTTP/1.1",
+					"cookies": [],
+					"headers": [
+						{
+							"name": "Vary",
+							"value": "Origin"
+						},
+						{
+							"name": "Vary",
+							"value": "Access-Control-Request-Method"
+						},
+						{
+							"name": "Vary",
+							"value": "Access-Control-Request-Headers"
+						},
+						{
+							"name": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"name": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"name": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"name": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"name": "Expires",
+							"value": "0"
+						},
+						{
+							"name": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"name": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"name": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"name": "Date",
+							"value": "Wed, 26 Oct 2022 04:12:05 GMT"
+						},
+						{
+							"name": "Connection",
+							"value": "close"
+						}
+					],
+					"content": {
+						"size": 17617,
+						"mimeType": "application/json",
+						"text": "{\"timestamp\":\"2022-10-26T04:12:05.933+00:00\",\"status\":500,\"error\":\"Internal Server Error\",\"trace\":\"org.springframework.dao.DataIntegrityViolationException: could not execute statement; SQL [n/a]; constraint [item_pedido_id_pedido_fkey]; nested exception is org.hibernate.exception.ConstraintViolationException: could not execute statement\\r\\n\\tat org.springframework.orm.jpa.vendor.HibernateJpaDialect.convertHibernateAccessException(HibernateJpaDialect.java:276)\\r\\n\\tat org.springframework.orm.jpa.vendor.HibernateJpaDialect.translateExceptionIfPossible(HibernateJpaDialect.java:233)\\r\\n\\tat org.springframework.orm.jpa.JpaTransactionManager.doCommit(JpaTransactionManager.java:566)\\r\\n\\tat org.springframework.transaction.support.AbstractPlatformTransactionManager.processCommit(AbstractPlatformTransactionManager.java:743)\\r\\n\\tat org.springframework.transaction.support.AbstractPlatformTransactionManager.commit(AbstractPlatformTransactionManager.java:711)\\r\\n\\tat org.springframework.transaction.interceptor.TransactionAspectSupport.commitTransactionAfterReturning(TransactionAspectSupport.java:654)\\r\\n\\tat org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:407)\\r\\n\\tat org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)\\r\\n\\tat org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)\\r\\n\\tat org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:137)\\r\\n\\tat org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)\\r\\n\\tat org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:174)\\r\\n\\tat org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)\\r\\n\\tat org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97)\\r\\n\\tat org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)\\r\\n\\tat org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:215)\\r\\n\\tat com.sun.proxy.$Proxy161.deleteById(Unknown Source)\\r\\n\\tat br.org.serratec.service.PedidoService.delete(PedidoService.java:90)\\r\\n\\tat br.org.serratec.controller.PedidoController.delete(PedidoController.java:112)\\r\\n\\tat java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)\\r\\n\\tat java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)\\r\\n\\tat java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)\\r\\n\\tat java.base/java.lang.reflect.Method.invoke(Method.java:566)\\r\\n\\tat org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)\\r\\n\\tat org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)\\r\\n\\tat org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)\\r\\n\\tat org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)\\r\\n\\tat org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)\\r\\n\\tat org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)\\r\\n\\tat org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1071)\\r\\n\\tat org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:964)\\r\\n\\tat org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)\\r\\n\\tat org.springframework.web.servlet.FrameworkServlet.doDelete(FrameworkServlet.java:931)\\r\\n\\tat javax.servlet.http.HttpServlet.service(HttpServlet.java:687)\\r\\n\\tat org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)\\r\\n\\tat javax.servlet.http.HttpServlet.service(HttpServlet.java:764)\\r\\n\\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)\\r\\n\\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)\\r\\n\\tat org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)\\r\\n\\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)\\r\\n\\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)\\r\\n\\tat org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:337)\\r\\n\\tat org.springframework.security.web.access.intercept.AuthorizationFilter.doFilterInternal(AuthorizationFilter.java:73)\\r\\n\\tat org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)\\r\\n\\tat org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346)\\r\\n\\tat org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:122)\\r\\n\\tat org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:116)\\r\\n\\tat org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346)\\r\\n\\tat org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:126)\\r\\n\\tat org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:81)\\r\\n\\tat org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346)\\r\\n\\tat org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:109)\\r\\n\\tat org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346)\\r\\n\\tat org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:149)\\r\\n\\tat org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346)\\r\\n\\tat org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)\\r\\n\\tat org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346)\\r\\n\\tat org.springframework.security.web.authentication.www.BasicAuthenticationFilter.doFilterInternal(BasicAuthenticationFilter.java:198)\\r\\n\\tat org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)\\r\\n\\tat org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346)\\r\\n\\tat br.org.serratec.security.JwtAuthorizationFilter.doFilterInternal(JwtAuthorizationFilter.java:35)\\r\\n\\tat org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)\\r\\n\\tat org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346)\\r\\n\\tat org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:223)\\r\\n\\tat org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:217)\\r\\n\\tat org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346)\\r\\n\\tat org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:103)\\r\\n\\tat org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:89)\\r\\n\\tat org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346)\\r\\n\\tat org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:91)\\r\\n\\tat org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)\\r\\n\\tat org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346)\\r\\n\\tat org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)\\r\\n\\tat org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)\\r\\n\\tat org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)\\r\\n\\tat org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346)\\r\\n\\tat org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:112)\\r\\n\\tat org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:82)\\r\\n\\tat org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346)\\r\\n\\tat org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:55)\\r\\n\\tat org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)\\r\\n\\tat org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346)\\r\\n\\tat org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42)\\r\\n\\tat org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)\\r\\n\\tat org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346)\\r\\n\\tat org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:221)\\r\\n\\tat org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:186)\\r\\n\\tat org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:354)\\r\\n\\tat org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:267)\\r\\n\\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)\\r\\n\\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)\\r\\n\\tat org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)\\r\\n\\tat org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)\\r\\n\\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)\\r\\n\\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)\\r\\n\\tat org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)\\r\\n\\tat org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)\\r\\n\\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)\\r\\n\\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)\\r\\n\\tat org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)\\r\\n\\tat org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)\\r\\n\\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)\\r\\n\\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)\\r\\n\\tat org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)\\r\\n\\tat org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)\\r\\n\\tat org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)\\r\\n\\tat org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)\\r\\n\\tat org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)\\r\\n\\tat org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)\\r\\n\\tat org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:360)\\r\\n\\tat org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)\\r\\n\\tat org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)\\r\\n\\tat org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:890)\\r\\n\\tat org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1789)\\r\\n\\tat org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)\\r\\n\\tat org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)\\r\\n\\tat org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)\\r\\n\\tat org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)\\r\\n\\tat java.base/java.lang.Thread.run(Thread.java:829)\\r\\nCaused by: org.hibernate.exception.ConstraintViolationException: could not execute statement\\r\\n\\tat org.hibernate.exception.internal.SQLStateConversionDelegate.convert(SQLStateConversionDelegate.java:109)\\r\\n\\tat org.hibernate.exception.internal.StandardSQLExceptionConverter.convert(StandardSQLExceptionConverter.java:37)\\r\\n\\tat org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:113)\\r\\n\\tat org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:99)\\r\\n\\tat org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.executeUpdate(ResultSetReturnImpl.java:200)\\r\\n\\tat org.hibernate.engine.jdbc.batch.internal.NonBatchingBatch.addToBatch(NonBatchingBatch.java:46)\\r\\n\\tat org.hibernate.persister.entity.AbstractEntityPersister.delete(AbstractEntityPersister.java:3698)\\r\\n\\tat org.hibernate.persister.entity.AbstractEntityPersister.delete(AbstractEntityPersister.java:3958)\\r\\n\\tat org.hibernate.action.internal.EntityDeleteAction.execute(EntityDeleteAction.java:123)\\r\\n\\tat org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:604)\\r\\n\\tat org.hibernate.engine.spi.ActionQueue.lambda$executeActions$1(ActionQueue.java:478)\\r\\n\\tat java.base/java.util.LinkedHashMap.forEach(LinkedHashMap.java:684)\\r\\n\\tat org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:475)\\r\\n\\tat org.hibernate.event.internal.AbstractFlushingEventListener.performExecutions(AbstractFlushingEventListener.java:344)\\r\\n\\tat org.hibernate.event.internal.DefaultFlushEventListener.onFlush(DefaultFlushEventListener.java:40)\\r\\n\\tat org.hibernate.event.service.internal.EventListenerGroupImpl.fireEventOnEachListener(EventListenerGroupImpl.java:107)\\r\\n\\tat org.hibernate.internal.SessionImpl.doFlush(SessionImpl.java:1407)\\r\\n\\tat org.hibernate.internal.SessionImpl.managedFlush(SessionImpl.java:489)\\r\\n\\tat org.hibernate.internal.SessionImpl.flushBeforeTransactionCompletion(SessionImpl.java:3290)\\r\\n\\tat org.hibernate.internal.SessionImpl.beforeTransactionCompletion(SessionImpl.java:2425)\\r\\n\\tat org.hibernate.engine.jdbc.internal.JdbcCoordinatorImpl.beforeTransactionCompletion(JdbcCoordinatorImpl.java:449)\\r\\n\\tat org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl.beforeCompletionCallback(JdbcResourceLocalTransactionCoordinatorImpl.java:183)\\r\\n\\tat org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl.access$300(JdbcResourceLocalTransactionCoordinatorImpl.java:40)\\r\\n\\tat org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl$TransactionDriverControlImpl.commit(JdbcResourceLocalTransactionCoordinatorImpl.java:281)\\r\\n\\tat org.hibernate.engine.transaction.internal.TransactionImpl.commit(TransactionImpl.java:101)\\r\\n\\tat org.springframework.orm.jpa.JpaTransactionManager.doCommit(JpaTransactionManager.java:562)\\r\\n\\t... 116 more\\r\\nCaused by: org.postgresql.util.PSQLException: ERROR: update or delete on table \\\"pedido\\\" violates foreign key constraint \\\"item_pedido_id_pedido_fkey\\\" on table \\\"item_pedido\\\"\\n  Detalhe: Key (id_pedido)=(3) is still referenced from table \\\"item_pedido\\\".\\r\\n\\tat org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2675)\\r\\n\\tat org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2365)\\r\\n\\tat org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:355)\\r\\n\\tat org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:490)\\r\\n\\tat org.postgresql.jdbc.PgStatement.execute(PgStatement.java:408)\\r\\n\\tat org.postgresql.jdbc.PgPreparedStatement.executeWithFlags(PgPreparedStatement.java:167)\\r\\n\\tat org.postgresql.jdbc.PgPreparedStatement.executeUpdate(PgPreparedStatement.java:135)\\r\\n\\tat com.zaxxer.hikari.pool.ProxyPreparedStatement.executeUpdate(ProxyPreparedStatement.java:61)\\r\\n\\tat com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeUpdate(HikariProxyPreparedStatement.java)\\r\\n\\tat org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.executeUpdate(ResultSetReturnImpl.java:197)\\r\\n\\t... 137 more\\r\\n\",\"message\":\"could not execute statement; SQL [n/a]; constraint [item_pedido_id_pedido_fkey]; nested exception is org.hibernate.exception.ConstraintViolationException: could not execute statement\",\"path\":\"/pedidos/3\"}"
+					},
+					"redirectURL": "",
+					"headersSize": -1,
+					"bodySize": -1
+				},
+				"cache": {},
+				"timings": {
+					"blocked": -1,
+					"dns": -1,
+					"connect": -1,
+					"send": 0,
+					"wait": 624.626,
+					"receive": 0,
+					"ssl": -1
+				},
+				"comment": "Deletar"
+			},
+			{
+				"startedDateTime": "2022-10-28T16:23:25.273Z",
+				"time": 0,
+				"request": {
+					"method": "PUT",
+					"url": "http://localhost:8080/pedidos/",
+					"httpVersion": "HTTP/1.1",
+					"cookies": [],
+					"headers": [],
+					"queryString": [],
+					"postData": {
+						"mimeType": "",
+						"text": "",
+						"params": []
+					},
+					"headersSize": -1,
+					"bodySize": -1,
+					"settingEncodeUrl": true
+				},
+				"response": {
+					"status": 0,
+					"statusText": "",
+					"httpVersion": "HTTP/1.1",
+					"cookies": [],
+					"headers": [],
+					"content": {
+						"size": 0,
+						"mimeType": ""
+					},
+					"redirectURL": "",
+					"headersSize": -1,
+					"bodySize": -1
+				},
+				"cache": {},
+				"timings": {
+					"blocked": -1,
+					"dns": -1,
+					"connect": -1,
+					"send": 0,
+					"wait": 0,
+					"receive": 0,
+					"ssl": -1
+				},
+				"comment": "Atualizar"
+			},
+			{
+				"startedDateTime": "2022-10-28T16:23:25.273Z",
+				"time": 382.078,
+				"request": {
+					"method": "POST",
+					"url": "http://localhost:8080/pedidos",
+					"httpVersion": "HTTP/1.1",
+					"cookies": [],
+					"headers": [
+						{
+							"name": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"name": "Authorization",
+							"value": "Basic bWFyaWFqb2FvQGVtYWlsLmNvbToxMjM0NTY="
+						}
+					],
+					"queryString": [],
+					"postData": {
+						"mimeType": "application/json",
+						"text": "{\n  \"cliente\": {\n    \"id\": 6\n  },\n  \"dataEntrega\": \"2022-10-25\",\n  \"dataEnvio\": \"2022-10-15\",\n  \"dataPedido\": \"2022-10-05\",\n  \"id\": 0,\n  \"status\": \"3\"\n}",
+						"params": []
+					},
+					"headersSize": -1,
+					"bodySize": -1,
+					"settingEncodeUrl": true
+				},
+				"response": {
+					"status": 200,
+					"statusText": "",
+					"httpVersion": "HTTP/1.1",
+					"cookies": [],
+					"headers": [
+						{
+							"name": "Vary",
+							"value": "Origin"
+						},
+						{
+							"name": "Vary",
+							"value": "Access-Control-Request-Method"
+						},
+						{
+							"name": "Vary",
+							"value": "Access-Control-Request-Headers"
+						},
+						{
+							"name": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"name": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"name": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"name": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"name": "Expires",
+							"value": "0"
+						},
+						{
+							"name": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"name": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"name": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"name": "Date",
+							"value": "Fri, 28 Oct 2022 16:03:47 GMT"
+						}
+					],
+					"content": {
+						"size": 202,
+						"mimeType": "application/json",
+						"text": "{\"id\":2,\"dataPedido\":\"2022-10-15\",\"dataEntrega\":\"2022-10-25\",\"dataEnvio\":\"2022-10-15\",\"status\":\"ENVIADO\",\"valorTotal\":0.0,\"itens\":[],\"cliente\":{\"email\":\"nathanfaria9@gmail.com\",\"nomeCompleto\":\"Nathan\"}}"
+					},
+					"redirectURL": "",
+					"headersSize": -1,
+					"bodySize": -1
+				},
+				"cache": {},
+				"timings": {
+					"blocked": -1,
+					"dns": -1,
+					"connect": -1,
+					"send": 0,
+					"wait": 382.078,
+					"receive": 0,
+					"ssl": -1
+				},
+				"comment": "Inserir Pedido"
+			},
+			{
+				"startedDateTime": "2022-10-28T16:23:25.273Z",
+				"time": 2707.668,
+				"request": {
+					"method": "PUT",
+					"url": "http://localhost:8080/itemPedidos/",
+					"httpVersion": "HTTP/1.1",
+					"cookies": [],
+					"headers": [],
+					"queryString": [],
+					"postData": {
+						"mimeType": "",
+						"text": "",
+						"params": []
+					},
+					"headersSize": -1,
+					"bodySize": -1,
+					"settingEncodeUrl": true
+				},
+				"response": {
+					"status": 0,
+					"statusText": "Error",
+					"httpVersion": "HTTP/1.1",
+					"cookies": [],
+					"headers": [],
+					"content": {
+						"size": 0,
+						"mimeType": "",
+						"text": ""
+					},
+					"redirectURL": "",
+					"headersSize": -1,
+					"bodySize": -1
+				},
+				"cache": {},
+				"timings": {
+					"blocked": -1,
+					"dns": -1,
+					"connect": -1,
+					"send": 0,
+					"wait": 2707.668,
+					"receive": 0,
+					"ssl": -1
+				},
+				"comment": "Atualizar"
+			},
+			{
+				"startedDateTime": "2022-10-28T16:23:25.273Z",
+				"time": 478.527,
+				"request": {
+					"method": "DELETE",
+					"url": "http://localhost:8080/itemPedido/4",
+					"httpVersion": "HTTP/1.1",
+					"cookies": [],
+					"headers": [
+						{
+							"name": "Authorization",
+							"value": "Basic bWFyaWFqb2FvQGVtYWlsLmNvbToxMjM0NTY="
+						}
+					],
+					"queryString": [],
+					"postData": {
+						"mimeType": "",
+						"text": "",
+						"params": []
+					},
+					"headersSize": -1,
+					"bodySize": -1,
+					"settingEncodeUrl": true
+				},
+				"response": {
+					"status": 204,
+					"statusText": "",
+					"httpVersion": "HTTP/1.1",
+					"cookies": [],
+					"headers": [
+						{
+							"name": "Vary",
+							"value": "Origin"
+						},
+						{
+							"name": "Vary",
+							"value": "Access-Control-Request-Method"
+						},
+						{
+							"name": "Vary",
+							"value": "Access-Control-Request-Headers"
+						},
+						{
+							"name": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"name": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"name": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"name": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"name": "Expires",
+							"value": "0"
+						},
+						{
+							"name": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"name": "Date",
+							"value": "Wed, 26 Oct 2022 04:07:57 GMT"
+						}
+					],
+					"content": {
+						"size": 0,
+						"mimeType": "",
+						"text": ""
+					},
+					"redirectURL": "",
+					"headersSize": -1,
+					"bodySize": -1
+				},
+				"cache": {},
+				"timings": {
+					"blocked": -1,
+					"dns": -1,
+					"connect": -1,
+					"send": 0,
+					"wait": 478.527,
+					"receive": 0,
+					"ssl": -1
+				},
+				"comment": "Deletar"
+			},
+			{
+				"startedDateTime": "2022-10-28T16:23:25.273Z",
+				"time": 399.553,
+				"request": {
+					"method": "POST",
+					"url": "http://localhost:8080/itemPedido",
+					"httpVersion": "HTTP/1.1",
+					"cookies": [],
+					"headers": [
+						{
+							"name": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"name": "Authorization",
+							"value": "Basic bWFyaWFqb2FvQGVtYWlsLmNvbToxMjM0NTY="
+						}
+					],
+					"queryString": [],
+					"postData": {
+						"mimeType": "application/json",
+						"text": "{\n  \"id\": 0,\n  \"pedido\": {\n    \"id\": 2\n  },\n  \"percentualDesconto\": 10,\n  \"produto\": {\n    \"idProduto\": 6\n  },\n  \"quantidade\": 1\n}",
+						"params": []
+					},
+					"headersSize": -1,
+					"bodySize": -1,
+					"settingEncodeUrl": true
+				},
+				"response": {
+					"status": 201,
+					"statusText": "",
+					"httpVersion": "HTTP/1.1",
+					"cookies": [],
+					"headers": [
+						{
+							"name": "Vary",
+							"value": "Origin"
+						},
+						{
+							"name": "Vary",
+							"value": "Access-Control-Request-Method"
+						},
+						{
+							"name": "Vary",
+							"value": "Access-Control-Request-Headers"
+						},
+						{
+							"name": "Location",
+							"value": "http://localhost:8080/itemPedido/2"
+						},
+						{
+							"name": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"name": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"name": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"name": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"name": "Expires",
+							"value": "0"
+						},
+						{
+							"name": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"name": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"name": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"name": "Date",
+							"value": "Fri, 28 Oct 2022 16:08:43 GMT"
+						}
+					],
+					"content": {
+						"size": 296,
+						"mimeType": "application/json",
+						"text": "{\"id\":2,\"quantidade\":1,\"produto\":{\"id\":6,\"nome\":\"Mouse Logitec\",\"descricao\":\"Mouse com 3 botoes e uma rodinha\",\"dataCadastro\":\"2019-10-01\",\"valorUnitario\":50.0,\"categoria\":{\"id\":3,\"nome\":\"LIVRARIA\",\"descricao\":\"livros, revistas, quadrinhos\"},\"linkImagem\":\"http://localhost:8080/produtos/foto/6\"}}"
+					},
+					"redirectURL": "",
+					"headersSize": -1,
+					"bodySize": -1
+				},
+				"cache": {},
+				"timings": {
+					"blocked": -1,
+					"dns": -1,
+					"connect": -1,
+					"send": 0,
+					"wait": 399.553,
+					"receive": 0,
+					"ssl": -1
+				},
+				"comment": "Inserir ItemPedido"
+			},
+			{
+				"startedDateTime": "2022-10-28T16:23:25.273Z",
+				"time": 356.601,
+				"request": {
+					"method": "GET",
+					"url": "http://localhost:8080/itemPedido/5",
+					"httpVersion": "HTTP/1.1",
+					"cookies": [],
+					"headers": [
+						{
+							"name": "Authorization",
+							"value": "Basic bWFyaWFqb2FvQGVtYWlsLmNvbToxMjM0NTY="
+						}
+					],
+					"queryString": [],
+					"postData": {
+						"mimeType": "",
+						"text": "",
+						"params": []
+					},
+					"headersSize": -1,
+					"bodySize": -1,
+					"settingEncodeUrl": true
+				},
+				"response": {
+					"status": 200,
+					"statusText": "",
+					"httpVersion": "HTTP/1.1",
+					"cookies": [],
+					"headers": [
+						{
+							"name": "Vary",
+							"value": "Origin"
+						},
+						{
+							"name": "Vary",
+							"value": "Access-Control-Request-Method"
+						},
+						{
+							"name": "Vary",
+							"value": "Access-Control-Request-Headers"
+						},
+						{
+							"name": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"name": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"name": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"name": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"name": "Expires",
+							"value": "0"
+						},
+						{
+							"name": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"name": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"name": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"name": "Date",
+							"value": "Wed, 26 Oct 2022 04:23:12 GMT"
+						}
+					],
+					"content": {
+						"size": 285,
+						"mimeType": "application/json",
+						"text": "{\"id\":5,\"quantidade\":1,\"produto\":{\"id\":5,\"nome\":\"Tablet Samsung\",\"descricao\":\"Tablet 10 polegadas\",\"dataCadastro\":\"2019-10-01\",\"valorUnitario\":3850.0,\"categoria\":{\"id\":1,\"nome\":\"INFORMATICA\",\"descricao\":\"produtos de informática\"},\"linkImagem\":\"http://localhost:8080/produtos/foto/5\"}}"
+					},
+					"redirectURL": "",
+					"headersSize": -1,
+					"bodySize": -1
+				},
+				"cache": {},
+				"timings": {
+					"blocked": -1,
+					"dns": -1,
+					"connect": -1,
+					"send": 0,
+					"wait": 356.601,
+					"receive": 0,
+					"ssl": -1
+				},
+				"comment": "Listar por ID"
+			},
+			{
+				"startedDateTime": "2022-10-28T16:23:25.273Z",
+				"time": 363.354,
+				"request": {
+					"method": "GET",
+					"url": "http://localhost:8080/itemPedido",
+					"httpVersion": "HTTP/1.1",
+					"cookies": [],
+					"headers": [
+						{
+							"name": "Authorization",
+							"value": "Basic bWFyaWFqb2FvQGVtYWlsLmNvbToxMjM0NTY="
+						}
+					],
+					"queryString": [],
+					"postData": {
+						"mimeType": "",
+						"text": "",
+						"params": []
+					},
+					"headersSize": -1,
+					"bodySize": -1,
+					"settingEncodeUrl": true
+				},
+				"response": {
+					"status": 200,
+					"statusText": "",
+					"httpVersion": "HTTP/1.1",
+					"cookies": [],
+					"headers": [
+						{
+							"name": "Vary",
+							"value": "Origin"
+						},
+						{
+							"name": "Vary",
+							"value": "Access-Control-Request-Method"
+						},
+						{
+							"name": "Vary",
+							"value": "Access-Control-Request-Headers"
+						},
+						{
+							"name": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"name": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"name": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"name": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"name": "Expires",
+							"value": "0"
+						},
+						{
+							"name": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"name": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"name": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"name": "Date",
+							"value": "Fri, 28 Oct 2022 16:15:14 GMT"
+						}
+					],
+					"content": {
+						"size": 592,
+						"mimeType": "application/json",
+						"text": "[{\"id\":1,\"quantidade\":1,\"produto\":{\"id\":1,\"nome\":\"Cadeira bx9\",\"descricao\":\"Cadeira ergonomica confortavel\",\"dataCadastro\":\"2019-10-01\",\"valorUnitario\":850.0,\"categoria\":{\"id\":3,\"nome\":\"LIVRARIA\",\"descricao\":\"livros, revistas, quadrinhos\"},\"linkImagem\":\"http://localhost:8080/produtos/foto/1\"}},{\"id\":2,\"quantidade\":1,\"produto\":{\"id\":6,\"nome\":\"Mouse Logitec\",\"descricao\":\"Mouse com 3 botoes e uma rodinha\",\"dataCadastro\":\"2019-10-01\",\"valorUnitario\":50.0,\"categoria\":{\"id\":3,\"nome\":\"LIVRARIA\",\"descricao\":\"livros, revistas, quadrinhos\"},\"linkImagem\":\"http://localhost:8080/produtos/foto/6\"}}]"
+					},
+					"redirectURL": "",
+					"headersSize": -1,
+					"bodySize": -1
+				},
+				"cache": {},
+				"timings": {
+					"blocked": -1,
+					"dns": -1,
+					"connect": -1,
+					"send": 0,
+					"wait": 363.354,
+					"receive": 0,
+					"ssl": -1
+				},
+				"comment": "Listar Todos"
+			},
+			{
+				"startedDateTime": "2022-10-28T16:23:25.273Z",
+				"time": 535.107,
+				"request": {
+					"method": "GET",
+					"url": "http://localhost:8080/pedidos/5",
+					"httpVersion": "HTTP/1.1",
+					"cookies": [],
+					"headers": [
+						{
+							"name": "Authorization",
+							"value": "Basic bWFyaWFqb2FvQGVtYWlsLmNvbToxMjM0NTY="
+						}
+					],
+					"queryString": [],
+					"postData": {
+						"mimeType": "",
+						"text": "",
+						"params": []
+					},
+					"headersSize": -1,
+					"bodySize": -1,
+					"settingEncodeUrl": true
+				},
+				"response": {
+					"status": 200,
+					"statusText": "",
+					"httpVersion": "HTTP/1.1",
+					"cookies": [],
+					"headers": [
+						{
+							"name": "Vary",
+							"value": "Origin"
+						},
+						{
+							"name": "Vary",
+							"value": "Access-Control-Request-Method"
+						},
+						{
+							"name": "Vary",
+							"value": "Access-Control-Request-Headers"
+						},
+						{
+							"name": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"name": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"name": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"name": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"name": "Expires",
+							"value": "0"
+						},
+						{
+							"name": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"name": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"name": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"name": "Date",
+							"value": "Wed, 26 Oct 2022 04:15:54 GMT"
+						}
+					],
+					"content": {
+						"size": 307,
+						"mimeType": "application/json",
+						"text": "{\"id\":5,\"dataPedido\":\"2022-10-15\",\"dataEntrega\":\"2022-10-25\",\"dataEnvio\":\"2022-10-15\",\"status\":\"AGUARDANDO_PAGAMENTO\",\"itens\":[{\"id\":7,\"quantidade\":1,\"precoVenda\":0.0,\"percentualDesconto\":10.0,\"valorBruto\":50.0,\"valorLiquido\":45.0}],\"cliente\":{\"email\":\"gustavo@email.com\",\"nomeCompleto\":\"Gustavo Teixeira\"}}"
+					},
+					"redirectURL": "",
+					"headersSize": -1,
+					"bodySize": -1
+				},
+				"cache": {},
+				"timings": {
+					"blocked": -1,
+					"dns": -1,
+					"connect": -1,
+					"send": 0,
+					"wait": 535.107,
+					"receive": 0,
+					"ssl": -1
+				},
+				"comment": "Listar por ID"
+			},
+			{
+				"startedDateTime": "2022-10-28T16:23:25.273Z",
+				"time": 308.469,
+				"request": {
+					"method": "GET",
+					"url": "http://localhost:8080/pedidos",
+					"httpVersion": "HTTP/1.1",
+					"cookies": [],
+					"headers": [
+						{
+							"name": "Authorization",
+							"value": "Basic bWFyaWFqb2FvQGVtYWlsLmNvbToxMjM0NTY="
+						}
+					],
+					"queryString": [],
+					"postData": {
+						"mimeType": "",
+						"text": "",
+						"params": []
+					},
+					"headersSize": -1,
+					"bodySize": -1,
+					"settingEncodeUrl": true
+				},
+				"response": {
+					"status": 200,
+					"statusText": "",
+					"httpVersion": "HTTP/1.1",
+					"cookies": [],
+					"headers": [
+						{
+							"name": "Vary",
+							"value": "Origin"
+						},
+						{
+							"name": "Vary",
+							"value": "Access-Control-Request-Method"
+						},
+						{
+							"name": "Vary",
+							"value": "Access-Control-Request-Headers"
+						},
+						{
+							"name": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"name": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"name": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"name": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"name": "Expires",
+							"value": "0"
+						},
+						{
+							"name": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"name": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"name": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"name": "Date",
+							"value": "Fri, 28 Oct 2022 16:15:20 GMT"
+						}
+					],
+					"content": {
+						"size": 586,
+						"mimeType": "application/json",
+						"text": "[{\"id\":1,\"dataPedido\":\"2020-02-03\",\"dataEntrega\":\"2020-01-02\",\"dataEnvio\":\"2020-02-03\",\"status\":\"ENTREGUE\",\"valorTotal\":850.0,\"itens\":[{\"id\":1,\"quantidade\":1,\"percentualDesconto\":0.0,\"valorBruto\":850.0,\"valorLiquido\":850.0}],\"cliente\":{\"email\":\"ester@email.com\",\"nomeCompleto\":\"Ester Peixoto\"}},{\"id\":2,\"dataPedido\":\"2022-10-15\",\"dataEntrega\":\"2022-10-25\",\"dataEnvio\":\"2022-10-15\",\"status\":\"ENVIADO\",\"valorTotal\":45.0,\"itens\":[{\"id\":2,\"quantidade\":1,\"percentualDesconto\":10.0,\"valorBruto\":50.0,\"valorLiquido\":45.0}],\"cliente\":{\"email\":\"nathanfaria9@gmail.com\",\"nomeCompleto\":\"Nathan\"}}]"
+					},
+					"redirectURL": "",
+					"headersSize": -1,
+					"bodySize": -1
+				},
+				"cache": {},
+				"timings": {
+					"blocked": -1,
+					"dns": -1,
+					"connect": -1,
+					"send": 0,
+					"wait": 308.469,
+					"receive": 0,
+					"ssl": -1
+				},
+				"comment": "Listar Todos"
+			},
+			{
+				"startedDateTime": "2022-10-28T16:23:25.273Z",
+				"time": 40.359,
+				"request": {
+					"method": "PUT",
+					"url": "http://localhost:8080/produtos/17",
+					"httpVersion": "HTTP/1.1",
+					"cookies": [],
+					"headers": [
+						{
+							"name": "Content-Type",
+							"value": "multipart/form-data"
+						},
+						{
+							"name": "Produto",
+							"value": "multipart/form-data"
+						}
+					],
+					"queryString": [],
+					"postData": {
+						"mimeType": "multipart/form-data",
+						"text": "",
+						"params": [
+							{
+								"name": "file",
+								"fileName": "C:\\Users\\natha\\OneDrive\\Documentos\\Games\\PerfilSteam\\Laranja-Fox.jpg"
+							},
+							{
+								"name": "produto",
+								"value": "{\n      \"nome\": \"camisa\", \n        \"descricao\": \"camisa da adidas preta\",\n    \"dataCadastro\": \"2022-01-01\",\n      \"quantidadeEstoque\": 25,\n    \"valorUnitario\": 1000,\n    \"categoria\": {\n        \"id\": \"1\"\n    }\n}"
+							}
+						]
+					},
+					"headersSize": -1,
+					"bodySize": -1,
+					"settingEncodeUrl": true
+				},
+				"response": {
+					"status": 201,
+					"statusText": "",
+					"httpVersion": "HTTP/1.1",
+					"cookies": [],
+					"headers": [
+						{
+							"name": "Location",
+							"value": "http://localhost:8080/produtos/17/17"
+						},
+						{
+							"name": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"name": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"name": "Date",
+							"value": "Mon, 24 Oct 2022 18:22:24 GMT"
+						}
+					],
+					"content": {
+						"size": 264,
+						"mimeType": "application/json",
+						"text": "{\"id\":17,\"nome\":\"camisa\",\"descricao\":\"camisa da adidas preta\",\"quantidadeEstoque\":25,\"dataCadastro\":\"2022-01-01\",\"valorUnitario\":1000.0,\"categoria\":{\"id\":1,\"nome\":\"INFORMATICA\",\"descricao\":\"produtos de informática\"},\"uri\":\"http://localhost:8080/produtos/foto/17\"}"
+					},
+					"redirectURL": "",
+					"headersSize": -1,
+					"bodySize": -1
+				},
+				"cache": {},
+				"timings": {
+					"blocked": -1,
+					"dns": -1,
+					"connect": -1,
+					"send": 0,
+					"wait": 40.359,
+					"receive": 0,
+					"ssl": -1
+				},
+				"comment": "Atualizar"
+			},
+			{
+				"startedDateTime": "2022-10-28T16:23:25.273Z",
+				"time": 22.128999999999998,
+				"request": {
+					"method": "DELETE",
+					"url": "http://localhost:8080/produtos/17",
+					"httpVersion": "HTTP/1.1",
+					"cookies": [],
+					"headers": [],
+					"queryString": [],
+					"postData": {
+						"mimeType": "",
+						"text": "",
+						"params": []
+					},
+					"headersSize": -1,
+					"bodySize": -1,
+					"settingEncodeUrl": true
+				},
+				"response": {
+					"status": 204,
+					"statusText": "",
+					"httpVersion": "HTTP/1.1",
+					"cookies": [],
+					"headers": [
+						{
+							"name": "Date",
+							"value": "Mon, 24 Oct 2022 18:25:23 GMT"
+						}
+					],
+					"content": {
+						"size": 0,
+						"mimeType": "",
+						"text": ""
+					},
+					"redirectURL": "",
+					"headersSize": -1,
+					"bodySize": -1
+				},
+				"cache": {},
+				"timings": {
+					"blocked": -1,
+					"dns": -1,
+					"connect": -1,
+					"send": 0,
+					"wait": 22.128999999999998,
+					"receive": 0,
+					"ssl": -1
+				},
+				"comment": "Deletar"
+			},
+			{
+				"startedDateTime": "2022-10-28T16:23:25.273Z",
+				"time": 473.148,
+				"request": {
+					"method": "POST",
+					"url": "http://localhost:8080/produtos",
+					"httpVersion": "HTTP/1.1",
+					"cookies": [],
+					"headers": [
+						{
+							"name": "Content-Type",
+							"value": "image/png"
+						},
+						{
+							"name": "Produto",
+							"value": "multipart/form-data"
+						},
+						{
+							"name": "Authorization",
+							"value": "Basic bWFyaWFqb2FvQGVtYWlsLmNvbToxMjM0NTY="
+						}
+					],
+					"queryString": [],
+					"postData": {
+						"mimeType": "multipart/form-data",
+						"text": "",
+						"params": [
+							{
+								"name": "file",
+								"fileName": "C:\\Users\\natha\\OneDrive\\Documentos\\Games\\PerfilSteam\\Amarelo-Anubis.png"
+							},
+							{
+								"name": "produto",
+								"value": "{\n      \"nome\": \"trex\", \n        \"descricao\": \"camisa da adidas preta\",\n    \"dataCadastro\": \"2022-01-01\",\n      \"quantidadeEstoque\": 35,\n    \"valorUnitario\": 1000,\n    \"categoria\": {\n        \"id\": \"1\"\n    }\n}"
+							}
+						]
+					},
+					"headersSize": -1,
+					"bodySize": -1,
+					"settingEncodeUrl": true
+				},
+				"response": {
+					"status": 201,
+					"statusText": "",
+					"httpVersion": "HTTP/1.1",
+					"cookies": [],
+					"headers": [
+						{
+							"name": "Vary",
+							"value": "Origin"
+						},
+						{
+							"name": "Vary",
+							"value": "Access-Control-Request-Method"
+						},
+						{
+							"name": "Vary",
+							"value": "Access-Control-Request-Headers"
+						},
+						{
+							"name": "Location",
+							"value": "http://localhost:8080/produtos/10"
+						},
+						{
+							"name": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"name": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"name": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"name": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"name": "Expires",
+							"value": "0"
+						},
+						{
+							"name": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"name": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"name": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"name": "Date",
+							"value": "Fri, 28 Oct 2022 16:02:26 GMT"
+						}
+					],
+					"content": {
+						"size": 262,
+						"mimeType": "application/json",
+						"text": "{\"id\":10,\"nome\":\"trex\",\"descricao\":\"camisa da adidas preta\",\"quantidadeEstoque\":35,\"dataCadastro\":\"2022-01-01\",\"valorUnitario\":1000.0,\"categoria\":{\"id\":1,\"nome\":\"INFORMATICA\",\"descricao\":\"produtos de informática\"},\"uri\":\"http://localhost:8080/produtos/foto/10\"}"
+					},
+					"redirectURL": "",
+					"headersSize": -1,
+					"bodySize": -1
+				},
+				"cache": {},
+				"timings": {
+					"blocked": -1,
+					"dns": -1,
+					"connect": -1,
+					"send": 0,
+					"wait": 473.148,
+					"receive": 0,
+					"ssl": -1
+				},
+				"comment": "Inserir Produto"
+			},
+			{
+				"startedDateTime": "2022-10-28T16:23:25.273Z",
+				"time": 415.783,
+				"request": {
+					"method": "GET",
+					"url": "http://localhost:8080/produtos/2",
+					"httpVersion": "HTTP/1.1",
+					"cookies": [],
+					"headers": [
+						{
+							"name": "Authorization",
+							"value": "Basic bWFyaWFqb2FvQGVtYWlsLmNvbToxMjM0NTY="
+						}
+					],
+					"queryString": [],
+					"postData": {
+						"mimeType": "",
+						"text": "",
+						"params": []
+					},
+					"headersSize": -1,
+					"bodySize": -1,
+					"settingEncodeUrl": true
+				},
+				"response": {
+					"status": 200,
+					"statusText": "",
+					"httpVersion": "HTTP/1.1",
+					"cookies": [],
+					"headers": [
+						{
+							"name": "Vary",
+							"value": "Origin"
+						},
+						{
+							"name": "Vary",
+							"value": "Access-Control-Request-Method"
+						},
+						{
+							"name": "Vary",
+							"value": "Access-Control-Request-Headers"
+						},
+						{
+							"name": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"name": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"name": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"name": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"name": "Expires",
+							"value": "0"
+						},
+						{
+							"name": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"name": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"name": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"name": "Date",
+							"value": "Mon, 24 Oct 2022 22:27:28 GMT"
+						}
+					],
+					"content": {
+						"size": 274,
+						"mimeType": "application/json",
+						"text": "{\"id\":2,\"nome\":\"Badesh Branca\",\"descricao\":\"Escrivaninha para computador\",\"quantidadeEstoque\":4,\"dataCadastro\":\"2019-10-01\",\"valorUnitario\":480.0,\"categoria\":{\"id\":3,\"nome\":\"LIVRARIA\",\"descricao\":\"livros, revistas, quadrinhos\"},\"uri\":\"http://localhost:8080/produtos/foto/2\"}"
+					},
+					"redirectURL": "",
+					"headersSize": -1,
+					"bodySize": -1
+				},
+				"cache": {},
+				"timings": {
+					"blocked": -1,
+					"dns": -1,
+					"connect": -1,
+					"send": 0,
+					"wait": 415.783,
+					"receive": 0,
+					"ssl": -1
+				},
+				"comment": "Listar por ID"
+			},
+			{
+				"startedDateTime": "2022-10-28T16:23:25.273Z",
+				"time": 484.24699999999996,
+				"request": {
+					"method": "GET",
+					"url": "http://localhost:8080/produtos",
+					"httpVersion": "HTTP/1.1",
+					"cookies": [],
+					"headers": [
+						{
+							"name": "Authorization",
+							"value": "Basic bWFyaWFqb2FvQGVtYWlsLmNvbToxMjM0NTY="
+						}
+					],
+					"queryString": [],
+					"postData": {
+						"mimeType": "",
+						"text": "",
+						"params": []
+					},
+					"headersSize": -1,
+					"bodySize": -1,
+					"settingEncodeUrl": true
+				},
+				"response": {
+					"status": 200,
+					"statusText": "",
+					"httpVersion": "HTTP/1.1",
+					"cookies": [],
+					"headers": [
+						{
+							"name": "Vary",
+							"value": "Origin"
+						},
+						{
+							"name": "Vary",
+							"value": "Access-Control-Request-Method"
+						},
+						{
+							"name": "Vary",
+							"value": "Access-Control-Request-Headers"
+						},
+						{
+							"name": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"name": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"name": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"name": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"name": "Expires",
+							"value": "0"
+						},
+						{
+							"name": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"name": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"name": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"name": "Date",
+							"value": "Wed, 26 Oct 2022 04:07:24 GMT"
+						}
+					],
+					"content": {
+						"size": 2768,
+						"mimeType": "application/json",
+						"text": "[{\"id\":1,\"nome\":\"Cadeira bx9\",\"descricao\":\"Cadeira ergonomica confortavel\",\"quantidadeEstoque\":3,\"dataCadastro\":\"2019-10-01\",\"valorUnitario\":850.0,\"categoria\":{\"id\":3,\"nome\":\"LIVRARIA\",\"descricao\":\"livros, revistas, quadrinhos\"},\"uri\":\"http://localhost:8080/produtos/foto/1\"},{\"id\":2,\"nome\":\"Badesh Branca\",\"descricao\":\"Escrivaninha para computador\",\"quantidadeEstoque\":4,\"dataCadastro\":\"2019-10-01\",\"valorUnitario\":480.0,\"categoria\":{\"id\":3,\"nome\":\"LIVRARIA\",\"descricao\":\"livros, revistas, quadrinhos\"},\"uri\":\"http://localhost:8080/produtos/foto/2\"},{\"id\":3,\"nome\":\"Do Inferno\",\"descricao\":\"Quadrinho do Alan More\",\"quantidadeEstoque\":2,\"dataCadastro\":\"2019-10-01\",\"valorUnitario\":150.0,\"categoria\":{\"id\":2,\"nome\":\"ESCRITORIO\",\"descricao\":\"cadeiras, mesas, e materiais de escritório\"},\"uri\":\"http://localhost:8080/produtos/foto/3\"},{\"id\":4,\"nome\":\"Use a Cabeca Java\",\"descricao\":\"Livro principal para Java\",\"quantidadeEstoque\":10,\"dataCadastro\":\"2019-10-01\",\"valorUnitario\":75.0,\"categoria\":{\"id\":2,\"nome\":\"ESCRITORIO\",\"descricao\":\"cadeiras, mesas, e materiais de escritório\"},\"uri\":\"http://localhost:8080/produtos/foto/4\"},{\"id\":5,\"nome\":\"Tablet Samsung\",\"descricao\":\"Tablet 10 polegadas\",\"quantidadeEstoque\":2,\"dataCadastro\":\"2019-10-01\",\"valorUnitario\":3850.0,\"categoria\":{\"id\":1,\"nome\":\"INFORMATICA\",\"descricao\":\"produtos de informática\"},\"uri\":\"http://localhost:8080/produtos/foto/5\"},{\"id\":6,\"nome\":\"Mouse Logitec\",\"descricao\":\"Mouse com 3 botoes e uma rodinha\",\"quantidadeEstoque\":2,\"dataCadastro\":\"2019-10-01\",\"valorUnitario\":50.0,\"categoria\":{\"id\":3,\"nome\":\"LIVRARIA\",\"descricao\":\"livros, revistas, quadrinhos\"},\"uri\":\"http://localhost:8080/produtos/foto/6\"},{\"id\":7,\"nome\":\"Fita Crepe\",\"descricao\":\"Fita crepe simples\",\"quantidadeEstoque\":33,\"dataCadastro\":\"2019-10-01\",\"valorUnitario\":1.3,\"categoria\":{\"id\":1,\"nome\":\"INFORMATICA\",\"descricao\":\"produtos de informática\"},\"uri\":\"http://localhost:8080/produtos/foto/7\"},{\"id\":8,\"nome\":\"Mousepad\",\"descricao\":\"Mousepad estilizado com foto\",\"quantidadeEstoque\":13,\"dataCadastro\":\"2019-10-01\",\"valorUnitario\":25.0,\"categoria\":{\"id\":1,\"nome\":\"INFORMATICA\",\"descricao\":\"produtos de informática\"},\"uri\":\"http://localhost:8080/produtos/foto/8\"},{\"id\":9,\"nome\":\"A Batalha do Apocalipse\",\"descricao\":\"Melhor livro que voce deve ler\",\"quantidadeEstoque\":55,\"dataCadastro\":\"2019-10-01\",\"valorUnitario\":42.0,\"categoria\":{\"id\":2,\"nome\":\"ESCRITORIO\",\"descricao\":\"cadeiras, mesas, e materiais de escritório\"},\"uri\":\"http://localhost:8080/produtos/foto/9\"},{\"id\":10,\"nome\":\"trex\",\"descricao\":\"camisa da adidas preta\",\"quantidadeEstoque\":29,\"dataCadastro\":\"2022-01-01\",\"valorUnitario\":1000.0,\"categoria\":{\"id\":1,\"nome\":\"INFORMATICA\",\"descricao\":\"produtos de informática\"},\"uri\":\"http://localhost:8080/produtos/foto/10\"}]"
+					},
+					"redirectURL": "",
+					"headersSize": -1,
+					"bodySize": -1
+				},
+				"cache": {},
+				"timings": {
+					"blocked": -1,
+					"dns": -1,
+					"connect": -1,
+					"send": 0,
+					"wait": 484.24699999999996,
+					"receive": 0,
+					"ssl": -1
+				},
+				"comment": "Listar Todos"
+			},
+			{
+				"startedDateTime": "2022-10-28T16:23:25.273Z",
+				"time": 211.01600000000002,
+				"request": {
+					"method": "DELETE",
+					"url": "http://localhost:8080/categorias/5",
+					"httpVersion": "HTTP/1.1",
+					"cookies": [],
+					"headers": [],
+					"queryString": [],
+					"postData": {
+						"mimeType": "",
+						"text": "",
+						"params": []
+					},
+					"headersSize": -1,
+					"bodySize": -1,
+					"settingEncodeUrl": true
+				},
+				"response": {
+					"status": 204,
+					"statusText": "",
+					"httpVersion": "HTTP/1.1",
+					"cookies": [],
+					"headers": [
+						{
+							"name": "Date",
+							"value": "Sat, 22 Oct 2022 14:31:46 GMT"
+						}
+					],
+					"content": {
+						"size": 0,
+						"mimeType": "",
+						"text": ""
+					},
+					"redirectURL": "",
+					"headersSize": -1,
+					"bodySize": -1
+				},
+				"cache": {},
+				"timings": {
+					"blocked": -1,
+					"dns": -1,
+					"connect": -1,
+					"send": 0,
+					"wait": 211.01600000000002,
+					"receive": 0,
+					"ssl": -1
+				},
+				"comment": "Deletar"
+			},
+			{
+				"startedDateTime": "2022-10-28T16:23:25.273Z",
+				"time": 294.246,
+				"request": {
+					"method": "POST",
+					"url": "http://localhost:8080/categorias",
+					"httpVersion": "HTTP/1.1",
+					"cookies": [],
+					"headers": [
+						{
+							"name": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"name": "Authorization",
+							"value": "Basic bWFyaWFqb2FvQGVtYWlsLmNvbToxMjM0NTY="
+						}
+					],
+					"queryString": [],
+					"postData": {
+						"mimeType": "application/json",
+						"text": "{\n\t\"nome\": \"TESTE\",\n\t\"descricao\": \"cadeiras, mesas, e materiais de escritório\"\n}",
+						"params": []
+					},
+					"headersSize": -1,
+					"bodySize": -1,
+					"settingEncodeUrl": true
+				},
+				"response": {
+					"status": 201,
+					"statusText": "",
+					"httpVersion": "HTTP/1.1",
+					"cookies": [],
+					"headers": [
+						{
+							"name": "Vary",
+							"value": "Origin"
+						},
+						{
+							"name": "Vary",
+							"value": "Access-Control-Request-Method"
+						},
+						{
+							"name": "Vary",
+							"value": "Access-Control-Request-Headers"
+						},
+						{
+							"name": "Location",
+							"value": "http://localhost:8080/categorias/5"
+						},
+						{
+							"name": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"name": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"name": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"name": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"name": "Expires",
+							"value": "0"
+						},
+						{
+							"name": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"name": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"name": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"name": "Date",
+							"value": "Fri, 28 Oct 2022 16:00:51 GMT"
+						}
+					],
+					"content": {
+						"size": 81,
+						"mimeType": "application/json",
+						"text": "{\"id\":5,\"nome\":\"TESTE\",\"descricao\":\"cadeiras, mesas, e materiais de escritório\"}"
+					},
+					"redirectURL": "",
+					"headersSize": -1,
+					"bodySize": -1
+				},
+				"cache": {},
+				"timings": {
+					"blocked": -1,
+					"dns": -1,
+					"connect": -1,
+					"send": 0,
+					"wait": 294.246,
+					"receive": 0,
+					"ssl": -1
+				},
+				"comment": "Inserir Categoria"
+			},
+			{
+				"startedDateTime": "2022-10-28T16:23:25.273Z",
+				"time": 16.131,
+				"request": {
+					"method": "GET",
+					"url": "http://localhost:8080/categorias/2",
+					"httpVersion": "HTTP/1.1",
+					"cookies": [],
+					"headers": [
+						{
+							"name": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"queryString": [],
+					"postData": {
+						"mimeType": "application/json",
+						"text": "{\n\t\"id\": 2,\n\t\"nome\": \"ESCRITORIO\",\n\t\"descricao\": \"cadeiras, mesas, e materiais de escritório\"\n}",
+						"params": []
+					},
+					"headersSize": -1,
+					"bodySize": -1,
+					"settingEncodeUrl": true
+				},
+				"response": {
+					"status": 200,
+					"statusText": "",
+					"httpVersion": "HTTP/1.1",
+					"cookies": [],
+					"headers": [
+						{
+							"name": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"name": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"name": "Date",
+							"value": "Mon, 24 Oct 2022 17:51:54 GMT"
+						}
+					],
+					"content": {
+						"size": 86,
+						"mimeType": "application/json",
+						"text": "{\"id\":2,\"nome\":\"ESCRITORIO\",\"descricao\":\"cadeiras, mesas, e materiais de escritório\"}"
+					},
+					"redirectURL": "",
+					"headersSize": -1,
+					"bodySize": -1
+				},
+				"cache": {},
+				"timings": {
+					"blocked": -1,
+					"dns": -1,
+					"connect": -1,
+					"send": 0,
+					"wait": 16.131,
+					"receive": 0,
+					"ssl": -1
+				},
+				"comment": "Listar por ID"
+			},
+			{
+				"startedDateTime": "2022-10-28T16:23:25.273Z",
+				"time": 11.389,
+				"request": {
+					"method": "GET",
+					"url": "http://localhost:8080/categorias",
+					"httpVersion": "HTTP/1.1",
+					"cookies": [],
+					"headers": [],
+					"queryString": [],
+					"postData": {
+						"mimeType": "",
+						"text": "",
+						"params": []
+					},
+					"headersSize": -1,
+					"bodySize": -1,
+					"settingEncodeUrl": true
+				},
+				"response": {
+					"status": 200,
+					"statusText": "",
+					"httpVersion": "HTTP/1.1",
+					"cookies": [],
+					"headers": [
+						{
+							"name": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"name": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"name": "Date",
+							"value": "Mon, 24 Oct 2022 18:26:14 GMT"
+						}
+					],
+					"content": {
+						"size": 372,
+						"mimeType": "application/json",
+						"text": "[{\"id\":1,\"nome\":\"INFORMATICA\",\"descricao\":\"produtos de informática\"},{\"id\":2,\"nome\":\"ESCRITORIO\",\"descricao\":\"cadeiras, mesas, e materiais de escritório\"},{\"id\":3,\"nome\":\"LIVRARIA\",\"descricao\":\"livros, revistas, quadrinhos\"},{\"id\":4,\"nome\":\"CARTAS RPG\",\"descricao\":\"Pokemon, D&D, Magic\"},{\"id\":5,\"nome\":\"TESTE\",\"descricao\":\"cadeiras, mesas, e materiais de escritório\"}]"
+					},
+					"redirectURL": "",
+					"headersSize": -1,
+					"bodySize": -1
+				},
+				"cache": {},
+				"timings": {
+					"blocked": -1,
+					"dns": -1,
+					"connect": -1,
+					"send": 0,
+					"wait": 11.389,
+					"receive": 0,
+					"ssl": -1
+				},
+				"comment": "Listar Todos"
+			},
+			{
+				"startedDateTime": "2022-10-28T16:23:25.273Z",
+				"time": 89.694,
+				"request": {
+					"method": "DELETE",
+					"url": "http://localhost:8080/clientes/8",
+					"httpVersion": "HTTP/1.1",
+					"cookies": [],
+					"headers": [],
+					"queryString": [],
+					"postData": {
+						"mimeType": "",
+						"text": "",
+						"params": []
+					},
+					"headersSize": -1,
+					"bodySize": -1,
+					"settingEncodeUrl": true
+				},
+				"response": {
+					"status": 204,
+					"statusText": "",
+					"httpVersion": "HTTP/1.1",
+					"cookies": [],
+					"headers": [
+						{
+							"name": "Date",
+							"value": "Sat, 22 Oct 2022 13:59:50 GMT"
+						}
+					],
+					"content": {
+						"size": 0,
+						"mimeType": "",
+						"text": ""
+					},
+					"redirectURL": "",
+					"headersSize": -1,
+					"bodySize": -1
+				},
+				"cache": {},
+				"timings": {
+					"blocked": -1,
+					"dns": -1,
+					"connect": -1,
+					"send": 0,
+					"wait": 89.694,
+					"receive": 0,
+					"ssl": -1
+				},
+				"comment": "Deletar"
+			},
+			{
+				"startedDateTime": "2022-10-28T16:23:25.273Z",
+				"time": 333.90500000000003,
+				"request": {
+					"method": "PUT",
+					"url": "http://localhost:8080/clientes/12",
+					"httpVersion": "HTTP/1.1",
+					"cookies": [],
+					"headers": [
+						{
+							"name": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"name": "Authorization",
+							"value": "Basic bWFyaWFqb2FvQGVtYWlsLmNvbToxMjM0NTY="
+						}
+					],
+					"queryString": [],
+					"postData": {
+						"mimeType": "application/json",
+						"text": "{\n  \"cpf\": \"75315894002\",\n  \"dataNascimento\": \"2002-10-11\",\n  \"email\": \"nathanfaria9@gmail.com\",\n  \"endereco\": {\n    \"cep\": \"28620000\",\n    \"complemento\": \"Apartamento\",\n    \"numero\": 11\n  },\n  \"nomeCompleto\": \"Nathan Dias\",\n  \"telefone\": \"2291919292\"\n}",
+						"params": []
+					},
+					"headersSize": -1,
+					"bodySize": -1,
+					"settingEncodeUrl": true
+				},
+				"response": {
+					"status": 404,
+					"statusText": "",
+					"httpVersion": "HTTP/1.1",
+					"cookies": [],
+					"headers": [
+						{
+							"name": "Vary",
+							"value": "Origin"
+						},
+						{
+							"name": "Vary",
+							"value": "Access-Control-Request-Method"
+						},
+						{
+							"name": "Vary",
+							"value": "Access-Control-Request-Headers"
+						},
+						{
+							"name": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"name": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"name": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"name": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"name": "Expires",
+							"value": "0"
+						},
+						{
+							"name": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"name": "Content-Length",
+							"value": "0"
+						},
+						{
+							"name": "Date",
+							"value": "Fri, 28 Oct 2022 15:59:50 GMT"
+						}
+					],
+					"content": {
+						"size": 0,
+						"mimeType": "",
+						"text": ""
+					},
+					"redirectURL": "",
+					"headersSize": -1,
+					"bodySize": -1
+				},
+				"cache": {},
+				"timings": {
+					"blocked": -1,
+					"dns": -1,
+					"connect": -1,
+					"send": 0,
+					"wait": 333.90500000000003,
+					"receive": 0,
+					"ssl": -1
+				},
+				"comment": "Atualizar"
+			},
+			{
+				"startedDateTime": "2022-10-28T16:23:25.273Z",
+				"time": 6606.4980000000005,
+				"request": {
+					"method": "POST",
+					"url": "http://localhost:8080/clientes",
+					"httpVersion": "HTTP/1.1",
+					"cookies": [],
+					"headers": [
+						{
+							"name": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"name": "Authorization",
+							"value": "Basic bWFyaWFqb2FvQGVtYWlsLmNvbToxMjM0NTY="
+						}
+					],
+					"queryString": [],
+					"postData": {
+						"mimeType": "application/json",
+						"text": "{\n  \"cpf\": \"56761778026\",\n  \"dataNascimento\": \"2001-10-11\",\n  \"email\": \"nathanfaria9@gmail.com\",\n  \"endereco\": {\n    \"cep\": \"28620000\",\n    \"complemento\": \"Apartamento\",\n    \"numero\": 11\n  },\n  \"nomeCompleto\": \"Nathan\",\n  \"telefone\": \"2291919292\"\n}",
+						"params": []
+					},
+					"headersSize": -1,
+					"bodySize": -1,
+					"settingEncodeUrl": true
+				},
+				"response": {
+					"status": 201,
+					"statusText": "",
+					"httpVersion": "HTTP/1.1",
+					"cookies": [],
+					"headers": [
+						{
+							"name": "Vary",
+							"value": "Origin"
+						},
+						{
+							"name": "Vary",
+							"value": "Access-Control-Request-Method"
+						},
+						{
+							"name": "Vary",
+							"value": "Access-Control-Request-Headers"
+						},
+						{
+							"name": "Location",
+							"value": "http://localhost:8080/clientes/6"
+						},
+						{
+							"name": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"name": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"name": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"name": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"name": "Expires",
+							"value": "0"
+						},
+						{
+							"name": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"name": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"name": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"name": "Date",
+							"value": "Fri, 28 Oct 2022 15:58:06 GMT"
+						}
+					],
+					"content": {
+						"size": 320,
+						"mimeType": "application/json",
+						"text": "{\"id\":6,\"nomeCompleto\":\"Nathan\",\"email\":\"nathanfaria9@gmail.com\",\"cpf\":\"56761778026\",\"telefone\":\"2291919292\",\"dataNascimento\":\"2001-10-11\",\"endereco\":{\"id\":6,\"cep\":\"28620000\",\"logradouro\":\"Avenida Júlio Antônio Thurler\",\"complemento\":\"Apartamento\",\"bairro\":\"Olaria\",\"localidade\":\"Nova Friburgo\",\"uf\":\"RJ\",\"numero\":11}}"
+					},
+					"redirectURL": "",
+					"headersSize": -1,
+					"bodySize": -1
+				},
+				"cache": {},
+				"timings": {
+					"blocked": -1,
+					"dns": -1,
+					"connect": -1,
+					"send": 0,
+					"wait": 6606.4980000000005,
+					"receive": 0,
+					"ssl": -1
+				},
+				"comment": "Inserir Clientes"
+			},
+			{
+				"startedDateTime": "2022-10-28T16:23:25.273Z",
+				"time": 340.231,
+				"request": {
+					"method": "GET",
+					"url": "http://localhost:8080/clientes",
+					"httpVersion": "HTTP/1.1",
+					"cookies": [],
+					"headers": [
+						{
+							"name": "Authorization",
+							"value": "Basic bWFyaWFqb2FvQGVtYWlsLmNvbToxMjM0NTY="
+						}
+					],
+					"queryString": [],
+					"postData": {
+						"mimeType": "",
+						"text": "",
+						"params": []
+					},
+					"headersSize": -1,
+					"bodySize": -1,
+					"settingEncodeUrl": true
+				},
+				"response": {
+					"status": 200,
+					"statusText": "",
+					"httpVersion": "HTTP/1.1",
+					"cookies": [],
+					"headers": [
+						{
+							"name": "Vary",
+							"value": "Origin"
+						},
+						{
+							"name": "Vary",
+							"value": "Access-Control-Request-Method"
+						},
+						{
+							"name": "Vary",
+							"value": "Access-Control-Request-Headers"
+						},
+						{
+							"name": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"name": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"name": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"name": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"name": "Expires",
+							"value": "0"
+						},
+						{
+							"name": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"name": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"name": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"name": "Date",
+							"value": "Fri, 28 Oct 2022 16:03:36 GMT"
+						}
+					],
+					"content": {
+						"size": 1816,
+						"mimeType": "application/json",
+						"text": "[{\"id\":1,\"email\":\"ester@email.com\",\"nomeCompleto\":\"Ester Peixoto\",\"cpf\":\"60530582031\",\"telefone\":\"551234456\",\"dataNascimento\":\"1992-02-01\",\"endereco\":{\"id\":1,\"cep\":\"29190380\",\"logradouro\":\"Avenida Florestal\",\"complemento\":\"\",\"bairro\":\"Jardins\",\"cidade\":\"Aracruz\",\"estado\":\"ES\",\"numero\":549}},{\"id\":2,\"email\":\"caue@email.com\",\"nomeCompleto\":\"Cauê Victor Souza\",\"cpf\":\"59456286037\",\"telefone\":\"551234456\",\"dataNascimento\":\"1993-04-06\",\"endereco\":{\"id\":2,\"cep\":\"77808684\",\"logradouro\":\"Rua Brusque\",\"complemento\":\"\",\"bairro\":\"Residencial Camargo\",\"cidade\":\"Araguaína\",\"estado\":\"TO\",\"numero\":940}},{\"id\":3,\"email\":\"catarina@email.com\",\"nomeCompleto\":\"Catarina Aragão\",\"cpf\":\"31804568090\",\"telefone\":\"551234458\",\"dataNascimento\":\"1991-08-13\",\"endereco\":{\"id\":3,\"cep\":\"96420260\",\"logradouro\":\"Rua Cinqüenta e Sete\",\"complemento\":\"\",\"bairro\":\"Esplanada\",\"cidade\":\"Bagé\",\"estado\":\"RS\",\"numero\":575}},{\"id\":4,\"email\":\"gustavo@email.com\",\"nomeCompleto\":\"Gustavo Teixeira\",\"cpf\":\"58005641087\",\"telefone\":\"551234459\",\"dataNascimento\":\"2002-03-21\",\"endereco\":{\"id\":4,\"cep\":\"35164072\",\"logradouro\":\"Rua Lausanne\",\"complemento\":\"\",\"bairro\":\"SinBethânia\",\"cidade\":\"Ipatinga\",\"estado\":\"MG\",\"numero\":861}},{\"id\":5,\"email\":\"rosa@email.com\",\"nomeCompleto\":\"Emanuelly Rosa\",\"cpf\":\"77352233075\",\"telefone\":\"551234450\",\"dataNascimento\":\"2001-07-11\",\"endereco\":{\"id\":5,\"cep\":\"70673510\",\"logradouro\":\"Quadra SQSW\",\"complemento\":\"Bloco J\",\"bairro\":\"Setor Sudoeste\",\"cidade\":\"Brasília\",\"estado\":\"AL\",\"numero\":626}},{\"id\":6,\"email\":\"nathanfaria9@gmail.com\",\"nomeCompleto\":\"Nathan\",\"cpf\":\"56761778026\",\"telefone\":\"2291919292\",\"dataNascimento\":\"2001-10-11\",\"endereco\":{\"id\":6,\"cep\":\"28620000\",\"logradouro\":\"Avenida Júlio Antônio Thurler\",\"complemento\":\"Apartamento\",\"bairro\":\"Olaria\",\"cidade\":\"Nova Friburgo\",\"estado\":\"RJ\",\"numero\":11}}]"
+					},
+					"redirectURL": "",
+					"headersSize": -1,
+					"bodySize": -1
+				},
+				"cache": {},
+				"timings": {
+					"blocked": -1,
+					"dns": -1,
+					"connect": -1,
+					"send": 0,
+					"wait": 340.231,
+					"receive": 0,
+					"ssl": -1
+				},
+				"comment": "Listar Todos"
+			},
+			{
+				"startedDateTime": "2022-10-28T16:23:25.273Z",
+				"time": 1358.249,
+				"request": {
+					"method": "GET",
+					"url": "http://localhost:8080/clientes/2",
+					"httpVersion": "HTTP/1.1",
+					"cookies": [],
+					"headers": [
+						{
+							"name": "Authorization",
+							"value": "Basic bWFyaWFqb2FvQGVtYWlsLmNvbToxMjM0NTY="
+						}
+					],
+					"queryString": [],
+					"postData": {
+						"mimeType": "",
+						"text": "",
+						"params": []
+					},
+					"headersSize": -1,
+					"bodySize": -1,
+					"settingEncodeUrl": true
+				},
+				"response": {
+					"status": 200,
+					"statusText": "",
+					"httpVersion": "HTTP/1.1",
+					"cookies": [],
+					"headers": [
+						{
+							"name": "Vary",
+							"value": "Origin"
+						},
+						{
+							"name": "Vary",
+							"value": "Access-Control-Request-Method"
+						},
+						{
+							"name": "Vary",
+							"value": "Access-Control-Request-Headers"
+						},
+						{
+							"name": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"name": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"name": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"name": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"name": "Expires",
+							"value": "0"
+						},
+						{
+							"name": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"name": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"name": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"name": "Date",
+							"value": "Mon, 24 Oct 2022 22:27:12 GMT"
+						}
+					],
+					"content": {
+						"size": 303,
+						"mimeType": "application/json",
+						"text": "{\"id\":2,\"email\":\"caue@email.com\",\"nomeCompleto\":\"Cauê Victor Souza\",\"cpf\":\"59456286037\",\"telefone\":\"551234456\",\"dataNascimento\":\"1993-04-06\",\"endereco\":{\"id\":2,\"cep\":\"77808684\",\"logradouro\":\"Rua Brusque\",\"complemento\":\"\",\"bairro\":\"Residencial Camargo\",\"cidade\":\"Araguaína\",\"estado\":\"TO\",\"numero\":940}}"
+					},
+					"redirectURL": "",
+					"headersSize": -1,
+					"bodySize": -1
+				},
+				"cache": {},
+				"timings": {
+					"blocked": -1,
+					"dns": -1,
+					"connect": -1,
+					"send": 0,
+					"wait": 1358.249,
+					"receive": 0,
+					"ssl": -1
+				},
+				"comment": "Listar por ID"
+			}
+		]
+	}
+}

@@ -30,8 +30,7 @@ public class RelatorioController {
 
         if (pedido != null) {
             mailConfig.sendEmail(pedido.getCliente().getEmail(), "Dados do Pedido", relatorio.toString());
-            // mailConfig.sendEmail("nathan.dias@aluno.senai.br", "Dados do Pedido",
-            // relatorio.toString());
+
             return ResponseEntity.ok(relatorio);
 
         }
