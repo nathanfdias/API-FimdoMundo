@@ -42,16 +42,13 @@ public class ItemPedido {
 	@Column(name="preco_venda")
 	private Double precoVenda;
 
-    @NotNull
 	@Column(name="percentual_desconto")
 	@Min(0)
 	private Double percentualDesconto;
 
-    @NotNull
 	@Column(name="valor_bruto")
 	private Double valorBruto;
 
-    @NotNull
 	@Column(name="valor_liquido")
 	private Double valorLiquido;
 

@@ -48,6 +48,17 @@ public class CategoriaService {
         return new CategoriaDTO(cat);
     }
 
+    public CategoriaDTO atualizar(Long id, Categoria categoria) {
+		categoria.setId(id);
+		Categoria novaCategoria = new Categoria();
+		novaCategoria.setId(categoria.getId());
+		novaCategoria.setNome(categoria.getNome());
+		novaCategoria.setDescricao(categoria.getDescricao());
+        categoriaRepository.save(novaCategoria);
+		
+		return new CategoriaDTO(categoria);
+	}
+
     
     public Boolean delete(Long id) {
         Optional<Categoria> categoria = categoriaRepository.findById(id);

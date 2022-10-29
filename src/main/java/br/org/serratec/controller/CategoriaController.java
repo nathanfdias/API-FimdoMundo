@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -80,6 +81,19 @@ public class CategoriaController {
 
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
     }
+
+    @PutMapping("{id}")
+	public ResponseEntity<CategoriaDTO> atualizar(@PathVariable Long id, @Valid @RequestBody Categoria categoria) {
+		CategoriaDTO categoriaDTO = categoriaService.atualizar(id, categoria);		
+        if (categoriaDTO != null) {
+            URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}")
+                    .buildAndExpand(categoriaDTO.getId())
+                    .toUri();
+            return ResponseEntity.created(uri).body(categoriaDTO);
+        } 
+        
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
+	}
 
     @DeleteMapping("{id}")
     @ApiOperation(value = "Deletar categoria", notes = "preencha com o id da categoria")

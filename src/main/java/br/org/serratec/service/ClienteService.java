@@ -99,11 +99,11 @@ public class ClienteService {
         }
 
         // não permite alteração do cpf do cliente
-        if (clienteRepository.findByCpf(clienteInserirDTO.getCpf()) != null) {
-            if (!clienteRepository.findByCpf(clienteInserirDTO.getCpf()).getCpf().equals(clientL.getCpf())) {
-                throw new CpfException("CPF não pode ser alterado");
-            }
-        }
+        // if (clienteRepository.findByCpf(clienteInserirDTO.getCpf()) != null) {
+        //     if (!clienteRepository.findByCpf(clienteInserirDTO.getCpf()).getCpf().equals(clientL.getCpf())) {
+        //         throw new CpfException("CPF não pode ser alterado");
+        //     }
+        // }
 
         if (clienteRepository.findByCpf(clienteInserirDTO.getCpf()) == null) {
             throw new CpfException("CPF não pode ser alterado");
