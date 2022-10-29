@@ -49,6 +49,5 @@ public class EnderecoController {
 
         return ResponseEntity.notFound().build();
     }
-    
 }
 

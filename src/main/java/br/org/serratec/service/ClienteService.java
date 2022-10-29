@@ -18,7 +18,6 @@ import br.org.serratec.exception.EmailException;
 import br.org.serratec.model.Cliente;
 import br.org.serratec.model.Endereco;
 import br.org.serratec.repository.ClienteRepository;
-// import br.org.serratec.repository.EnderecoRepository;
 
 @Service
 public class ClienteService {
@@ -28,9 +27,6 @@ public class ClienteService {
 
     @Autowired
     private EnderecoService enderecoService;
-
-    // @Autowired
-    // private EnderecoRepository enderecoRepository;
 
     @Autowired
     private MailConfig mailConfig;
@@ -98,13 +94,6 @@ public class ClienteService {
             }
         }
 
-        // não permite alteração do cpf do cliente
-        // if (clienteRepository.findByCpf(clienteInserirDTO.getCpf()) != null) {
-        //     if (!clienteRepository.findByCpf(clienteInserirDTO.getCpf()).getCpf().equals(clientL.getCpf())) {
-        //         throw new CpfException("CPF não pode ser alterado");
-        //     }
-        // }
-
         if (clienteRepository.findByCpf(clienteInserirDTO.getCpf()) == null) {
             throw new CpfException("CPF não pode ser alterado");
         }
@@ -126,19 +115,14 @@ public class ClienteService {
 
         novoCliente = clienteRepository.save(novoCliente);
 
-        // mailConfig.sendEmail(clienteInserirDTO.getEmail(), "Atualização de cadastro de Usuário",
-        //         novoCliente.toString());
-
         return new ClienteDTO(novoCliente);
     }
 
     public Boolean delete(Long id) {
         Optional<Cliente> cliente = clienteRepository.findById(id);
-        // Optional<Endereco> endereco = enderecoRepository.findById(id);
-        // && endereco.isPresent()
+
         if (cliente.isPresent() ) {
             clienteRepository.deleteById(id);
-            // enderecoRepository.deleteById(id);
             return true;
         }
         return false;
